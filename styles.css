@@ -1,0 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.back{
+    background-image: linear-gradient(bottom, #3366ff 0%, #33ccff 100%);
+}
