@@ -7,27 +7,29 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     </head>
 <body style="background: linear-gradient(to left, #99ff66 0%, #ccffff 100%)">
-    <div class="container-fluid text-center p-4">
-        <h1 style="letter-spacing: 10px; font-family:'Times New Roman', Times, serif">CONSUMER REGISTRATION</h1>
-        <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; margin-top: 8px; letter-spacing: 3px;font-weight: bold;">You can register here to get avail all the shops and services nearby</p>
-        <div class="row p-4">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <img src="images/buyer.jpg" class="img-fluid" alt="consumer here" height="400px" width="100%" style="border-radius: 100%;padding-right: 12%; padding-bottom: 20%;">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 pt-5 pb-3">
-                <form class="form pb-4" action="files/insert_user.php" method="post">
-                    <div class="form-group">
-                        <input class="form-control form-control-lg input" type="text" name="name" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control form-control-lg input" type="email" name="email" placeholder="email" required>
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control form-control-lg input" type="password" name="pass" placeholder="Enter your name" required>
-                    </div>
-                    <button class="btn btn-outline-success btn-lg form-btn" name="signup" type="submit">Submit</button>
-                </form>
-                <p style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;margin-top: 100px;">Already Registered ? <a href="./index.html" style="text-decoration: none;">Login here!</a></p>
+    <div class="d-flex">
+        <div class="container text-center p-4">
+            <p style="letter-spacing: 4px;font-family:'Times New Roman', Times, serif;font-size: 30px;border-bottom-width:2px; border-bottom-style:double;">CONSUMER REGISTRATION</p>
+            <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; margin-top: 8px; letter-spacing: 3px;font-weight:500">You can register here to get access to all the shops and services nearby</p>
+            <div class="row p-4">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <img src="images/buyer.jpg" alt="consumer here" height="80%" width="100%" style="border-radius: 100%;padding-right: 12%;">
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 pt-5 pb-3">
+                    <form class="form pb-4" action="files/insert_user.php" method="post">
+                        <div class="form-group">
+                            <input class="form-control form-control-md input" type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-md input" type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control form-control-md input" type="password" name="pass" placeholder="Your Password" required>
+                        </div>
+                        <button class="btn btn-outline-success btn-md form-btn" name="signup" type="submit">Submit</button>
+                    </form>
+                    <p style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 17px;margin-top: 100px;">Already Registered ? <a href="./index.html" style="text-decoration: none;">Login here!</a></p>
+                </div>
             </div>
         </div>
     </div>
