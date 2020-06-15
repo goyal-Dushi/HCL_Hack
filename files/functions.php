@@ -21,10 +21,21 @@ function shop($loc,$category){
         $id=$row['shop_id'];
         $name=$row['shop_name'];
         $owner=$row['shop_email'];
+        $zone=$row['zone'];
         echo"
         <div class='col'>
-              <a href='#' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
-                <div class='d-flex justify-content-center'>
+
+            ";
+            if($zone == "red"){
+                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-danger mb-2'>
+              ";
+            }
+            else{
+                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
+              ";
+            }
+            echo"
+              <div class='d-flex justify-content-center'>
                     <h5 class='mb-2'>$name</h5>
                 </div>
                 <div class='row'>
@@ -42,5 +53,16 @@ function shop($loc,$category){
               </a>
             </div>";
     }
+}
+
+function getcategory($id){
+    global $con;
+    $topic="select * from category where id=$id";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $title=$row['name'];
+    }
+    echo"$title";
 }
 ?>
