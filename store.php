@@ -7,15 +7,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="styles.css" rel="stylesheet">
 </head>
+<?php 
+session_start();
+$con=mysqli_connect("localhost","root","","social")or die('try again in some minutes, please');
+
+    $user=$_SESSION['umail'];
+    $getuser="select * from shop where shop_email='$user';";
+    $runuser= mysqli_query($con,$getuser);
+    echo"$runuser";
+    $row=mysqli_fetch_array($runuser);
+	$shopid=$row['shop_id'];
+	$name=$row['shop_name'];
+	$location=$row['shop_location'];
+?>
 <body>
     <div class="d-flex">
         <div class="container text-center p-4">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="text-center pt-3">
-                        <h3>Store Name | Category</h3>
+                        <h3><?php echo"$name"; ?>| Category</h3>
                         <br>
-                        <p>Owner's Name</p><br>
+                        <p><?php echo"$location"; ?></p><br>
                         <p>Contact details and address</p>
                     </div>
                     <div class="text-center pt-3 pb-3">
