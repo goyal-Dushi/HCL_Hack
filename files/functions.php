@@ -31,7 +31,7 @@ function shop($loc,$category){
               ";
             }
             else{
-                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
+                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-success mb-2'>
               ";
             }
             echo"

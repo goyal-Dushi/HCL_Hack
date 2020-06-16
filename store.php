@@ -22,7 +22,7 @@ include("files/functions.php");
     $cid=$row['category'];
     $zone=$row['zone'];
 ?>
-<body style=<?php echo"'background:$zone;'";?>>
+<body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>
     <div class="d-flex">
         <div class="container text-center p-4">
             <div class="row">
