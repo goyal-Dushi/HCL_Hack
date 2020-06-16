@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('functions.php');	
 $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
 
 	 if(isset($_POST['login'])){
@@ -18,10 +18,12 @@ $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minu
 
 		echo "<script>alert('Password or email is incorrect, plz try again!')</script>";
 		exit();
+		header("Location: ../index.php");
 		}
 		else {
 		$_SESSION['umail']=$c_email;
-		header("Location: ../store.php");
+		$id=getid($c_email);
+		header("Location: ../store.php?id=$id");
 		}
 	}
 ?>

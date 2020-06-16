@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Shop</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
-<body style="background: linear-gradient(to bottom, #ffffff 0%, #9966ff 100%);">
+
+<?php 
+session_start();
+include("files/connection.php");
+include("files/functions.php");
+    $id=$_GET['id'];
+    $getuser="select * from shop where shop_id='$id';";
+    $runuser= mysqli_query($con,$getuser);
+    $row=mysqli_fetch_array($runuser);
+	$shopid=$row['shop_id'];
+	$name=$row['shop_name'];
+    $location=$row['shop_location'];
+    $user=$row['shop_email'];
+    $cid=$row['category'];
+    $zone=$row['zone'];
+    $user=$_SESSION['umail'];
+    $uname = getuser($user);
     
+?>
+
+<body style="background: linear-gradient(to bottom, #ffffff 0%, #9966ff 100%);">
+
     <div class="d-flex">
         <div class="container text-center p-4">
             <div class="row">
@@ -55,7 +76,7 @@
                         <button type="submit" class="btn btn-lg btn-outline-dark">Submit</button>
                     </form>
                     <div class="text-center pt-4" style="margin-top: 70px;">
-                        <a href="./listMarket.html"><button class="btn btn-lg btn-primary mt-2">Visit Shops</button></a>
+                        <a href="listMarket.html"><button class="btn btn-lg btn-primary mt-2">Visit Shops</button></a>
                         <button type="submit" class="btn btn-lg btn-success mt-2 ml-3">In Green Zone</button>
                         <button type="submit" class="btn btn-lg btn-danger mt-2 ml-3">In Red Zone</button>
                     </div>
@@ -63,25 +84,25 @@
                 <div class="col-lg-5 col-md-6 col-sm-12 p-3 mt-2">
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action list-group-item-primary mb-2">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="mb-2">Customer Name</h5>
-                        </div>
-                        <p>Requirements of the Customer</p>
-                        <p>Contact Number</p>
+                            <div class="d-flex justify-content-between">
+                                <h5 class="mb-2">Customer Name</h5>
+                            </div>
+                            <p>Requirements of the Customer</p>
+                            <p>Contact Number</p>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action list-group-item-primary mb-2">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="mb-2">Customer Name</h5>
-                        </div>
-                        <p>Requirements of the Customer</p>
-                        <p>Contact Number</p>
+                            <div class="d-flex justify-content-between">
+                                <h5 class="mb-2">Customer Name</h5>
+                            </div>
+                            <p>Requirements of the Customer</p>
+                            <p>Contact Number</p>
                         </a>
                         <a href="#" class="list-group-item list-group-item-action list-group-item-primary mb-2">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="mb-2">Customer Name</h5>
-                        </div>
-                        <p>Requirements of the Customer</p>
-                        <p>Contact Number</p>
+                            <div class="d-flex justify-content-between">
+                                <h5 class="mb-2">Customer Name</h5>
+                            </div>
+                            <p>Requirements of the Customer</p>
+                            <p>Contact Number</p>
                         </a>
                     </div>
                 </div>
@@ -89,4 +110,5 @@
         </div>
     </div>
 </body>
+
 </html>
