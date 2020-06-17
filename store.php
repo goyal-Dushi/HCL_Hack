@@ -12,6 +12,7 @@ session_start();
 include("files/connection.php");
 include("files/functions.php");
     $id=$_GET['id'];
+    $type=$_GET['type'];
     $getuser="select * from shop where shop_id='$id';";
     $runuser= mysqli_query($con,$getuser);
     $row=mysqli_fetch_array($runuser);
@@ -22,7 +23,7 @@ include("files/functions.php");
     $cid=$row['category'];
     $zone=$row['zone'];
     $user=$_SESSION['umail'];
-    $uname = getuser($user);
+    
     
 ?>
 <body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>d
@@ -74,10 +75,17 @@ include("files/functions.php");
                         </ul>
                     </div>
                     <div class="text-center pt-3 pb-3">
+                        <?php
+                        if($type=='shop'){
+                          
+                          echo"<a href='owner_side.php?id=$id&type=shop'>Check orders</a>";
+
+                        }
+                        else{
+                          $uname = getuser($user);
+                          echo"
                         <h3>Get in Touch</h3>
                         <p>These details are required so that the owner can contact you as soon as possible to meet your requirements.</p>
-                        <?php
-                        echo"
                         <form action='files/req.php' method='post'>
                             <div class='form-group'>
                                 <input type='text' class='form-control' value='$uname[1]' name='cust_name' placeholder='Your Name' required>
@@ -92,6 +100,7 @@ include("files/functions.php");
                             </div>
                             <button type='submit' name='submit' class='btn btn-outline-success btn-md'>Send</button>
                         </form>";
+                        }
                         ?>
                     </div>
                 </div>

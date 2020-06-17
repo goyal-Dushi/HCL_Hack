@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 09, 2020 at 12:08 PM
+-- Generation Time: Jun 17, 2020 at 03:39 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -35,15 +35,24 @@ CREATE TABLE IF NOT EXISTS `shop` (
   `shop_email` varchar(50) NOT NULL,
   `shop_location` varchar(100) NOT NULL,
   `shop_password` varchar(50) NOT NULL,
+  `category` int(10) NOT NULL,
+  `zone` varchar(10) NOT NULL,
+  `owner_name` varchar(50) NOT NULL,
+  `owner_contact` varchar(10) NOT NULL,
+  `shop_address` varchar(255) NOT NULL,
   PRIMARY KEY (`shop_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `shop`
 --
 
-INSERT INTO `shop` (`shop_id`, `shop_name`, `shop_email`, `shop_location`, `shop_password`) VALUES
-(1, 'xplore', 'a@gmail.com', 'delhi', 'nigga');
+INSERT INTO `shop` (`shop_id`, `shop_name`, `shop_email`, `shop_location`, `shop_password`, `category`, `zone`, `owner_name`, `owner_contact`, `shop_address`) VALUES
+(1, 'xplore', 'a@gmail.com', 'delhi', 'nigga', 1, 'green', 'aviral', '9876543321', 'somehwhere on earth'),
+(2, 'aviral', 'aviral@ymailc.com', 'ghaziabad', 'aviralw', 1, 'red', '', '', ''),
+(3, 'shop3', 'a@gmail.com', 'ghaziabad', 'niggaw', 1, 'green', '', '', ''),
+(4, 'shop4', 'aviral@ymailc.com', 'ghaziabad', 'aviral', 1, 'green', '', '', ''),
+(5, 'Aviral Sharma', 'shop@gmail.com', 'delhi', 'aviral', 1, 'yellow', '', '', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

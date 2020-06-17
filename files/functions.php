@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 
-function category($loc){
+function category($loc,$type){
     global $con;
     $topic="select * from category";
     $run= mysqli_query($con,$topic);
@@ -9,10 +9,34 @@ function category($loc){
     {
         $id=$row['id'];
         $title=$row['name'];
-        echo"<a href='listMarket.php?loc=$loc&id=$id' class='list-group-item list-group-item-action bg-light'>$title</a>";
+
+        echo"<a href='listMarket.php?loc=$loc&id=$id&type=$type' class='list-group-item list-group-item-action bg-light'>$title</a>";
     }
 }
-function shop($loc,$category){
+function postcategory(){
+    global $con;
+    $topic="select * from category";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $id=$row['id'];
+        $title=$row['name'];
+        
+        echo" <option value='$title'>$title</option>";
+    }
+}
+function shoplocations(){
+    global $con;
+    $topic="select DISTINCT shop_location from shop;";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $title=$row['shop_location'];
+        echo" <option value='$title'>$title</option>";
+    }
+    echo"</select>";
+}
+function shop($loc,$category,$type){
     global $con;
     $topic="select * from shop where shop_location='$loc' and category='$category';";
     $run= mysqli_query($con,$topic);
@@ -27,11 +51,11 @@ function shop($loc,$category){
 
             ";
             if($zone == "red"){
-                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-danger mb-2'>
+                echo"<a href='store.php?id=$id&type=$type' class='list-group-item list-group-item-action list-group-item-danger mb-2'>
               ";
             }
             else{
-                echo"<a href='store.php?id=$id' class='list-group-item list-group-item-action list-group-item-success mb-2'>
+                echo"<a href='store.php?id=$id&type=$type' class='list-group-item list-group-item-action list-group-item-success mb-2'>
               ";
             }
             echo"
@@ -83,8 +107,9 @@ function getuser($mail){
         $uname=$row['user_name'];
         $uid=$row['user_id'];
         $uphone=$row['phone'];
+        $loc=$row['location'];
     }
-    return array($uid,$uname,$uphone);
+    return array($uid,$uname,$uphone,$loc);
 }
 function getreq($id){
     global $con;

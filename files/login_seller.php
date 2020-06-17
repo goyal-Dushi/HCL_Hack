@@ -23,7 +23,8 @@ $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minu
 		else {
 		$_SESSION['umail']=$c_email;
 		$id=getid($c_email);
-		header("Location: ../store.php?id=$id");
+		$type='shop';
+		header("Location: ../store.php?id=$id&type=$type");
 		}
 	}
 ?>

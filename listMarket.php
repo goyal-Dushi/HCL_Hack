@@ -3,6 +3,7 @@
   $con=mysqli_connect("localhost","root","","social")or die('try again in some minutes, please');
   $user=$_SESSION['umail'];
   $loc = $_GET['loc'];
+  $type = $_GET['type'];
   $cate = $_GET['id'];
   
   include("files/functions.php");
@@ -24,7 +25,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Category</div>
       <div class="list-group list-group-flush">
-        <?php category($loc);?>
+        <?php category($loc,$type);?>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -56,7 +57,8 @@
         <div class="active-cyan-4 mb-4 pt-3 text-center">
           <form action="">
             <div class="form-group">
-              <?php echo"<input class='form-control' value='$loc' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>";?>
+              <?php echo"<select class='form-control' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>";
+              shoplocations();?>
             </div>
               <button type="button" name="search" class="btn btn-outline-info ml-4">Search</button>
           </form> 
@@ -65,7 +67,7 @@
         
         <div class="list-group">
           <div class="row">
-            <?php shop($loc, $cate);?>
+            <?php shop($loc, $cate,$type);?>
           </div>
         </div>
     </div>

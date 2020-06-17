@@ -19,11 +19,13 @@ include('files/functions.php');
 	$shopid=$row['shop_id'];
 	$name=$row['shop_name'];
     $location=$row['shop_location'];
-    $user=$row['shop_email'];
+    $oname=$row['owner_name'];
+	$ophone=$row['owner_contact'];
+    $adress=$row['shop_address'];
     $cid=$row['category'];
     $zone=$row['zone'];
-    $user=$_SESSION['umail'];
-    $uname = getuser($user);
+    $ueser=$_SESSION['umail'];
+    $uname = getuser($ueser);
     
 ?>
 
@@ -72,10 +74,10 @@ include('files/functions.php');
                     <form action='#' method='post'>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
-                                <input type='text' value='$name' class='form-control form-control-lg' name='owner_name' id='owner_name' placeholder='Your Name' required>
+                                <input type='text' value='$oname' class='form-control form-control-lg' name='owner_name' id='owner_name' placeholder='Your Name' required>
                             </div>
                             <div class='form-group col'>
-                                <input type='tel' value='$name' name='contact' id='contact' class='form-control form-control-lg' placeholder='Your Contact no.' required>
+                                <input type='tel' value='$ophone' name='contact' id='contact' class='form-control form-control-lg' placeholder='Your Contact no.' required>
                             </div>
                         </div>
                         <div class='form-row pt-2'>
@@ -85,14 +87,9 @@ include('files/functions.php');
                             </div>
                             <div class='form-group col'>
                                 <label for='category'><small>Type of shop you Own</small></label>
-                                <select class='custom-select form-control-lg' name='category' id='category' required>
-                                    <option value='General'>General Store</option>
-                                    <option value='Pharmacy'>Pharmacy</option>
-                                    <option value='Mechanic'>Mechanic</option>
-                                    <option value='plumbing'>Plumber</option>
-                                    <option value='grocery'>Grocery Store</option>
-                                    <option value='Other options'>Will be available</option>
-                                </select>
+                                <select class='custom-select form-control-lg' name='category' id='category' required>";
+                                postcategory();
+                                echo"</select>
                             </div>
                         </div>
                         <div class='form-row pt-2'>
@@ -102,20 +99,21 @@ include('files/functions.php');
                         </div>
                         <div class='form-row pt-2 pb-3'>
                             <div class='form-group col'>
-                                <input type='text' value='$name' name='address' id='address' placeholder='Your Shop's Address' class='form-control form-control-lg'>
+                                <input type='text' value='$adress' name='address' id='address' placeholder='Your Shop's Address' class='form-control form-control-lg'>
                             </div>
                             <div class='form-group col'>
                                 <input type='text' value='$location' name='city' id='city' placeholder='City' class='form-control form-control-lg' required>
                             </div>
                         </div>
                         <button type='submit' class='btn btn-lg btn-outline-dark'>Submit</button>
-                    </form>";
-                    ?>
+                    </form>
                     <div class='text-center pt-4' style='margin-top: 60px;'>
-                        <a href='./listMarket.php'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
-                        <button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button>
-                        <button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button>
-                    </div>
+                        <a href='./listMarket.php?loc=$location&id=&type=shop'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
+                        <a href='files/zone.php?zone=green&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
+                        <a href='files/zone.php?zone=red&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
+                    </div>";
+                    
+                    ?>
                 </div>
                 <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
                     <div class='list-group'>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include('functions.php');	
 $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
 
 	 if(isset($_POST['login'])){
@@ -21,7 +21,8 @@ $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minu
 		}
 		else {
 		$_SESSION['umail']=$c_email;
-		header("Location: ../listMarket.php?loc=$loc");
+		$loc=getuser($c_email);
+		header("Location: ../listMarket.php?loc=$loc[3]&id=0&type=user");
 		}
 	}
 ?>
