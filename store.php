@@ -24,14 +24,51 @@ include("files/functions.php");
 ?>
 <body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>
     <div class="d-flex">
-        <div class="container text-center p-4">
-            <div class="row">
+        <div class="container text-center p-2">
+
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Site Name</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dropdown link
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="#">Action</a>
+                              <a class="dropdown-item" href="#">Another action</a>
+                            </div>
+                          </li>
+                      </ul>
+                    </div>
+                </nav>
+
+
+            <div class="row pt-3">
                 <div class="col-lg-7">
                     <div class="text-center pt-3">
                         <h3><?php echo"$name | "; getcategory($cid);?></h3>
                         <br>
-                        <p><?php echo"$location"; ?></p><br>
-                        <p>Contact details and address</p>
+                        <ul>
+                          <li><?php echo"$location"; ?></li>
+                          <li>Contact details</li>
+                          <li>Address</li>
+                        </ul>
                     </div>
                     <div class="text-center pt-3 pb-3">
                         <h3>Get in Touch</h3>
@@ -52,7 +89,7 @@ include("files/functions.php");
                 </div>
                 <div class="col-lg-5">
                     <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 100vh; width:100%;">
-                        <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" class="pt-3 pb-3" frameborder="0"
+                        <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" style="height: 85%; width: 100%;" class="pt-3 pb-3" frameborder="0"
                           style="border:0" allowfullscreen></iframe>
                       </div>              
                 </div>
