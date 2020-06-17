@@ -21,8 +21,11 @@ include("files/functions.php");
     $user=$row['shop_email'];
     $cid=$row['category'];
     $zone=$row['zone'];
+    $user=$_SESSION['umail'];
+    $uname = getuser($user);
+    
 ?>
-<body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>
+<body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>d
     <div class="d-flex">
         <div class="container text-center p-2">
 
@@ -73,18 +76,23 @@ include("files/functions.php");
                     <div class="text-center pt-3 pb-3">
                         <h3>Get in Touch</h3>
                         <p>These details are required so that the owner can contact you as soon as possible to meet your requirements.</p>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="cust_name" placeholder="Your Name" required>
+                        <?php
+                        echo"
+                        <form action='files/req.php' method='post'>
+                            <div class='form-group'>
+                                <input type='text' class='form-control' value='$uname[1]' name='cust_name' placeholder='Your Name' required>
+                                <input type='hidden' class='form-control' value='$id' name='shop_id' placeholder='Your Name' required>
+                                <input type='hidden' class='form-control' value='$uname[0]' name='user_id' placeholder='Your Name' required>
                             </div>
-                            <div class="form-group">
-                                <input type="tel" class="form-control" name="cust_phone" placeholder="Contact Number" required>
+                            <div class='form-group'>
+                                <input type='tel' class='form-control' value='$uname[2]' name='cust_phone' placeholder='Contact Number' required>
                             </div>
-                            <div class="form-group">
-                                <textarea name="requirements" class="form-control" id="cust_require" cols="30" rows="5" placeholder="Your Requirements"></textarea>
+                            <div class='form-group'>
+                                <textarea name='requirements' class='form-control' id='cust_require' cols='30' rows='5' placeholder='Your Requirements'></textarea>
                             </div>
-                            <button type="submit" class="btn btn-outline-success btn-md">Send</button>
-                        </form>
+                            <button type='submit' name='submit' class='btn btn-outline-success btn-md'>Send</button>
+                        </form>";
+                        ?>
                     </div>
                 </div>
                 <div class="col-lg-5">

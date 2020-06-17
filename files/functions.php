@@ -54,7 +54,6 @@ function shop($loc,$category){
             </div>";
     }
 }
-
 function getcategory($id){
     global $con;
     $topic="select * from category where id=$id";
@@ -64,5 +63,49 @@ function getcategory($id){
         $title=$row['name'];
     }
     echo"$title";
+}
+function getid($mail){
+    global $con;
+    $topic="select * from shop where shop_email='$mail' ";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $id=$row['shop_id'];
+    }
+    return $id;
+}
+function getuser($mail){
+    global $con;
+    $topic="select * from user where user_email='$mail' ";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $uname=$row['user_name'];
+        $uid=$row['user_id'];
+        $uphone=$row['phone'];
+    }
+    return array($uid,$uname,$uphone);
+}
+function getreq($id){
+    global $con;
+    $topic="select * from requirment where sid='$id' ";
+    $run= mysqli_query($con,$topic);
+    echo"click to mark done";
+    while($row=mysqli_fetch_array($run))
+    {
+        $name=$row['name'];
+        $rid=$row['rid'];
+        $content=$row['content'];
+        $uphone=$row['phone'];
+        echo"
+        <a href='files/deletereq.php?id=$rid' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
+            <div class='d-flex justify-content-between'>
+                <h5 class='mb-2'>$name</h5>
+            </div>
+            <p>$content</p>
+            <p>$uphone</p>
+            </a>
+        </a>";
+    }
 }
 ?>
