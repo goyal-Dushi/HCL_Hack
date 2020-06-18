@@ -50,7 +50,7 @@ function shop($loc,$category,$type){
         <div class='col'>
 
             ";
-            if($zone == "red"){
+            if($zone == "ff0000"){
                 echo"<a href='store.php?id=$id&type=$type' class='list-group-item list-group-item-action list-group-item-danger mb-2'>
               ";
             }

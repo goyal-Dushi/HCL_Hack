@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('functions.php');	
-$con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
+include('connection.php');
 
 	 if(isset($_POST['login'])){
 
@@ -24,7 +24,7 @@ $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minu
 		$_SESSION['umail']=$c_email;
 		$id=getid($c_email);
 		$type='shop';
-		header("Location: ../store.php?id=$id&type=$type");
+		header("Location: ../owner_side.php?id=$id&type=$type");
 		}
 	}
 ?>

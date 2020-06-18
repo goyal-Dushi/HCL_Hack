@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('functions.php');	
-$con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
+include('connection.php');
 
 	 if(isset($_POST['login'])){
 

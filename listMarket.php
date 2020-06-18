@@ -1,12 +1,13 @@
 <?php
   session_start();
-  $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
+  include("files/connection.php");
+  include("files/functions.php");
   $user=$_SESSION['umail'];
   $loc = $_GET['loc'];
   $type = $_GET['type'];
   $cate = $_GET['id'];
+  $id = $id=getid($user);
   
-  include("files/functions.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,14 @@
               <a class="nav-link" href="#">About Us<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><?php echo"$user";?></a>
+              <?php 
+                if($type=='shop'){
+                  echo"<a class='nav-link' href='store.php?id=$id&type=shop'>$user</a>";
+                } 
+                else{
+                  echo"<a class='nav-link' href='profile.php?id=$id'>$user</a>";
+                }
+              ?>
             </li>
           </ul>
         </div>

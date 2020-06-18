@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>HOME</title>
 </head>
-
 <body style="background: linear-gradient(to right, #3399ff -9%, #ffffff 61%);">
     <div class="d-flex">
         <div class="container text-center back">

@@ -29,7 +29,12 @@
                             <input class="form-control form-control-md input" type="email" name="email" placeholder="email" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-control-md input" type="number" name="category" placeholder="category" required>
+                            <input class="form-control form-control-md input" type="email" name="ownernaem  " placeholder="email" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control form-control-md input" name='category' required>
+
+                                <?php include("files/functions.php");postcategory();?>
                         </div>
                         <div class="form-group">
                             <input class="form-control form-control-md input" type="password" name="pass" placeholder="Password" required>

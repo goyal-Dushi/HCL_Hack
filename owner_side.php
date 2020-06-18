@@ -17,14 +17,15 @@ include('files/functions.php');
     $runuser= mysqli_query($con,$getuser);
     $row=mysqli_fetch_array($runuser);
 	$shopid=$row['shop_id'];
-	$name=$row['shop_name'];
+    $name=$row['shop_name'];
+    $mail=$row['shop_email'];
     $location=$row['shop_location'];
     $oname=$row['owner_name'];
 	$ophone=$row['owner_contact'];
     $adress=$row['shop_address'];
     $cid=$row['category'];
     $zone=$row['zone'];
-    $ueser=$_SESSION['umail'];
+    $user=$_SESSION['umail'];
     $uname = getuser($ueser);
     
 ?>
@@ -59,7 +60,9 @@ include('files/functions.php');
             <div class='row mt-4'>
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-2'>
                     <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
-                    <?php echo"
+                    <?php 
+                    if($mail==$user){
+                        echo"
                     <form action='#' method='post'>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
@@ -98,10 +101,13 @@ include('files/functions.php');
                     </form>
                     <div class='text-center pt-4' style='margin-top: 60px;'>
                         <a href='./listMarket.php?loc=$location&id=&type=shop'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
-                        <a href='files/zone.php?zone=#66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
-                        <a href='files/zone.php?zone=#ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
+                        <a href='files/zone.php?zone=66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
+                        <a href='files/zone.php?zone=ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
                     </div>";
-                    
+                    }
+                    else{
+                        echo"User Not Found";
+                    }
                     ?>
                 </div>
                 <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
