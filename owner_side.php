@@ -42,26 +42,15 @@ include('files/functions.php');
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="#">Visit Shops <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Features</a>
+                            <!-- This option is only for business owner , since it will direct him to his purple page -->
+                          <a class="nav-link" href="#">My Profile</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Pricing</a>
+                          <a class="nav-link" href="#">Log Out</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown link
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                            </div>
-                          </li>
                       </ul>
                     </div>
                 </nav>
@@ -109,8 +98,8 @@ include('files/functions.php');
                     </form>
                     <div class='text-center pt-4' style='margin-top: 60px;'>
                         <a href='./listMarket.php?loc=$location&id=&type=shop'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
-                        <a href='files/zone.php?zone=green&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
-                        <a href='files/zone.php?zone=red&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
+                        <a href='files/zone.php?zone=#66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
+                        <a href='files/zone.php?zone=#ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
                     </div>";
                     
                     ?>
@@ -123,6 +112,10 @@ include('files/functions.php');
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>

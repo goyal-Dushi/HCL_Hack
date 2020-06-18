@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $con=mysqli_connect("localhost","root","","social")or die('try again in some minutes, please');
+  $con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
   $user=$_SESSION['umail'];
   $loc = $_GET['loc'];
   $type = $_GET['type'];
@@ -60,7 +60,7 @@
               <?php echo"<select class='form-control' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>";
               shoplocations();?>
             </div>
-              <button type="button" name="search" class="btn btn-outline-info ml-4">Search</button>
+              <button type="submit" name="search" class="btn btn-outline-info ml-4">Search</button>
           </form> 
         </div>
         

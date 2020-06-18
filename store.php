@@ -26,7 +26,7 @@ include("files/functions.php");
     
     
 ?>
-<body style=<?php echo"'background:linear-gradient(180deg, $zone, white);'";?>>d
+<body style=<?php echo"'background:linear-gradient(to left, $zone 0%, #ffffff 100%);'";?>>d
     <div class="d-flex">
         <div class="container text-center p-2">
 
@@ -38,42 +38,37 @@ include("files/functions.php");
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                          <a class="nav-link" href="#">Visit Shops <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Features</a>
+                            <!-- This option is only for business owner , since it will direct him to his purple page -->
+                          <a class="nav-link" href="#">My Profile</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Pricing</a>
+                          <a class="nav-link" href="#">Log Out</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown link
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                            </div>
-                          </li>
                       </ul>
                     </div>
                 </nav>
 
 
-            <div class="row pt-3">
+            <div class="row pt-5">
                 <div class="col-lg-7">
-                    <div class="text-center pt-3">
-                        <h3><?php echo"$name | "; getcategory($cid);?></h3>
-                        <br>
-                        <ul>
-                          <li><?php echo"$location"; ?></li>
-                          <li>Contact details</li>
-                          <li>Address</li>
-                        </ul>
+                  <div class="row pt-3">
+                    <div class="col-lg-8 text-center">
+                      <h3><?php echo"$name | "; getcategory($cid);?></h3>
+                      <br>
+                      <ul>
+                        <li><?php echo"$location"; ?></li>
+                        <li>Contact details</li>
+                        <li>Address</li>
+                      </ul>
                     </div>
+                    <div class="col-lg-4 p-2">
+                      <!-- image of shop to be displayed here !!!  -->
+                        <img src="" alt="Shop Image" height="70%" width="70%">
+                    </div>
+                  </div>
                     <div class="text-center pt-3 pb-3">
                         <?php
                         if($type=='shop'){
