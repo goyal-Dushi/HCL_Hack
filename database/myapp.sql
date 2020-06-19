@@ -94,10 +94,10 @@ CREATE TABLE IF NOT EXISTS `shop` (
 --
 
 INSERT INTO `shop` (`shop_id`, `shop_name`, `shop_email`, `shop_location`, `shop_password`, `category`, `zone`, `owner_name`, `owner_contact`, `shop_address`) VALUES
-(1, 'xplore', 'a@gmail.com', 'delhi', 'nigga', 1, 'green', 'aviral', '9876543321', 'somehwhere on earth'),
-(2, 'aviral', 'aviral@ymailc.com', 'ghaziabad', 'aviralw', 1, 'red', '', '', ''),
-(3, 'shop3', 'a@gmail.com', 'ghaziabad', 'niggaw', 1, 'green', '', '', ''),
-(4, 'shop4', 'aviral@ymailc.com', 'ghaziabad', 'aviral', 1, 'green', '', '', ''),
+(1, 'xplore', 'a@gmail.com', 'delhi', 'nigga', 1, '66ff66', 'aviral', '9876543321', 'somehwhere on earth'),
+(2, 'aviral', 'aviral@ymailc.com', 'ghaziabad', 'aviralw', 1, 'ff0000', '', '', ''),
+(3, 'shop3', 'a@gmail.com', 'ghaziabad', 'niggaw', 1, '66ff66', '', '', ''),
+(4, 'shop4', 'aviral@ymailc.com', 'ghaziabad', 'aviral', 1, '66ff66', '', '', ''),
 (5, 'Aviral Sharma', 'shop@gmail.com', 'delhi', 'aviral', 1, 'yellow', '', '', '');
 
 -- --------------------------------------------------------

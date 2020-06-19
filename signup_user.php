@@ -34,7 +34,7 @@
                         </div>
                         <button class="btn btn-outline-success btn-md form-btn" name="signup" type="submit">Submit</button>
                     </form>
-                    <p style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 17px;margin-top: 100px;">Already Registered ? <a href="./index.html" style="text-decoration: none;">Login here!</a></p>
+                    <p style="text-align: center;font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: 17px;margin-top: 100px;">Already Registered ? <a href="./index.php" style="text-decoration: none;">Login here!</a></p>
                 </div>
             </div>
         </div>

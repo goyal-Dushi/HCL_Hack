@@ -36,15 +36,18 @@ include('files/functions.php');
 
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <?php 
+        $imgSrc = 'images/logo.png';
+        $heightImage = '40px';
+        $widthImage = '40px';
         if($mail==$user){
-            echo"<a class='navbar-brand' href='listMarket.php?loc=$location&id=$cid&type=shop'>Site Name</a>
+            echo"<a class='navbar-brand' href='listMarket.php?loc=$location&id=$cid&type=shop'><img src=$imgSrc height=$heightImage width=$widthImage></a>
                     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                       <span class='navbar-toggler-icon'></span>
                     </button>
                     <div class='collapse navbar-collapse' id='navbarNav'>
                       <ul class='navbar-nav'>
                         <li class='nav-item'>
-                          <a class='nav-link' href='#'>Visit Shops <span class='sr-only'>(current)</span></a>
+                          <a class='nav-link' href='listMarket.php?loc=$location&id=$cid&type=shop'>Visit Shops</a>
                         </li>
                         <li class='nav-item'>
                             <!-- This option is only for business owner , since it will direct him to his purple page -->
@@ -58,7 +61,7 @@ include('files/functions.php');
                 </nav>
 
 
-            <div class='row mt-4'>
+            <div class='row mt-5'>
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-2'>
                     <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
                     
@@ -100,9 +103,8 @@ include('files/functions.php');
                         </div>
                         <button type='submit' class='btn btn-lg btn-outline-dark'>Submit</button>
                     </form>
-                    <div class='text-center pt-4' style='margin-top: 60px;'>
-                        <a href='./listMarket.php?loc=$location&id=&type=shop'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
-                        <a href='files/zone.php?zone=66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
+                    <div class='text-center pt-3' style='margin-top: 45px;'>
+                        <a href='files/zone.php?zone=66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2'>In Green Zone</button></a>
                         <a href='files/zone.php?zone=ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
                     </div>
                 </div>

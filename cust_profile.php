@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>My Profile</title>
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>
-</head>
 <?php
 session_start();
 include("files/connection.php");
@@ -15,12 +7,21 @@ $id=$_GET['id'];
 $details = getuserby($id);
 ?>
 
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Hello <?php $details[1]?></title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>
+</head>
+
 <body style=' background: linear-gradient(to left, #ff9933 0%, #cc99ff 100%);'>
     <div class='d-flex'>
         <div class='container text-center p-2'>
 
             <nav class='navbar navbar-expand-lg fixed-top navbar-dark bg-dark'>
-                <a class='navbar-brand' href='listMarket.php'>Site Name</a>
+                <a class='navbar-brand' href='listMarket.php'><img src="images/logo.png" alt="Logo" height='40px' width='40px' ></a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                   <span class='navbar-toggler-icon'></span>
                 </button>
@@ -28,7 +29,7 @@ $details = getuserby($id);
                   <ul class='navbar-nav'>
                     <li class='nav-item'>
                         <!-- This option is for business owner and customer both depending upon who signed in! -->
-                      <a class='nav-link' href='#'>My Profile</a>
+                      <a class='nav-link' href='./cust_profile.php'>My Profile</a>
                     </li>
                     <li class='nav-item'>
                       <a class='nav-link' href='#'>Log Out</a>

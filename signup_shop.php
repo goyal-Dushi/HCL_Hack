@@ -15,7 +15,7 @@
             <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px; margin-top: 15px; letter-spacing: 3px;font-weight: 500;">Register your Business with us and scale up your business as well as customer base.</p>
             <div class="row p-4">
                 <div class="col-lg-6 col-md-12 col-sm-12 pr-3">
-                    <img src="images/businessman.jpg" style="border: none; border-radius: 100%; margin-right: 20px;padding-right: 12%;" alt="business img" height="100%" width="100%">
+                    <img src="images/businessman.jpg" style="border: none; border-radius: 100%; margin-right: 20px;padding-right: 12%;" alt="business img" height="90%" width="100%">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 pt-4 pb-2 pr-3" style="text-align: center;">
                     <form class="form pb-3" action="files/insert_shop.php" method="post">
@@ -32,7 +32,7 @@
                             <input class="form-control form-control-md input" type="email" name="ownernaem  " placeholder="email" required>
                         </div>
                         <div class="form-group">
-                            <select class="form-control form-control-md input" name='category' required>
+                            <select class="form-control form-control-md input mb-3" name='category' required>
 
                                 <?php include("files/functions.php");postcategory();?>
                         </div>
@@ -43,7 +43,7 @@
                             <button class="btn btn-md btn-outline-primary form-btn" name="signup" type="submit">Submit</button>
                         </div>
                     </form>
-                    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 17px;margin-top: 100px;">Already Registered ? <a href="./index.html" style="text-decoration: none;">Login here</a> </p>
+                    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 17px;margin-top: 100px;">Already Registered ? <a href="./index.php" style="text-decoration: none;">Login here</a> </p>
                 </div>
             </div>
         </div>

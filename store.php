@@ -28,14 +28,14 @@ include("files/functions.php");
   <div class="d-flex">
     <div class="container text-center p-2">
       <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-        <a class="navbar-brand" href="#">Site Name</a>
+        <a class="navbar-brand" href="./listMarket.php"><img src="images/logo.png" alt="Logo" height='40px' width='40px' ></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Visit Shops <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="./listMarket.php">Visit Shops <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <!-- This option is only for business owner , since it will direct him to his purple page -->
