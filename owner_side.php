@@ -26,31 +26,32 @@ include('files/functions.php');
     $cid=$row['category'];
     $zone=$row['zone'];
     $user=$_SESSION['umail'];
-    $uname = getuser($ueser);
     
 ?>
 
-<body style='background: linear-gradient(to bottom, #ffffff 0%, #9966ff 100%);'>
+<body style='background: linear-gradient(to bottom, #<?php echo"$zone";?> 0%, #9966ff 100%);'>
 
     <div class='d-flex'>
         <div class='container text-center p-4'>
 
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Site Name</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+        <?php 
+        if($mail==$user){
+            echo"<a class='navbar-brand' href='listMarket.php?loc=$location&id=$cid&type=shop'>Site Name</a>
+                    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                      <span class='navbar-toggler-icon'></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Visit Shops <span class="sr-only">(current)</span></a>
+                    <div class='collapse navbar-collapse' id='navbarNav'>
+                      <ul class='navbar-nav'>
+                        <li class='nav-item'>
+                          <a class='nav-link' href='#'>Visit Shops <span class='sr-only'>(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class='nav-item'>
                             <!-- This option is only for business owner , since it will direct him to his purple page -->
-                          <a class="nav-link" href="#">My Profile</a>
+                          <a class='nav-link' href='#'>My Profile</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Log Out</a>
+                        <li class='nav-item'>
+                          <a class='nav-link' href='#'>Log Out</a>
                         </li>
                       </ul>
                     </div>
@@ -60,9 +61,9 @@ include('files/functions.php');
             <div class='row mt-4'>
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-2'>
                     <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
-                    <?php 
-                    if($mail==$user){
-                        echo"
+                    
+                    
+                        
                     <form action='#' method='post'>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
@@ -103,18 +104,20 @@ include('files/functions.php');
                         <a href='./listMarket.php?loc=$location&id=&type=shop'><button class='btn btn-lg btn-primary mt-2'>Visit Shops</button></a>
                         <a href='files/zone.php?zone=66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2 ml-3'>In Green Zone</button></a>
                         <a href='files/zone.php?zone=ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
-                    </div>";
+                    </div>
+                </div>
+                <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
+                    <div class='list-group'>";
+                        getreq($id);
+                        echo"
+                    </div>
+                </div>
+                ";
                     }
                     else{
                         echo"User Not Found";
                     }
                     ?>
-                </div>
-                <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
-                    <div class='list-group'>
-                        <?php getreq($id);?>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

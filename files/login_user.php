@@ -22,7 +22,7 @@ include('connection.php');
 		else {
 		$_SESSION['umail']=$c_email;
 		$loc=getuser($c_email);
-		header("Location: ../listMarket.php?loc=$loc[3]&id=0&type=user");
+		header("Location: ../listMarket.php?loc=$loc[3]&id=$loc[0]&type=user");
 		}
 	}
 ?>

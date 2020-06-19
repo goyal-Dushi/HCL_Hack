@@ -6,7 +6,6 @@
   $loc = $_GET['loc'];
   $type = $_GET['type'];
   $cate = $_GET['id'];
-  $id = $id=getid($user);
   
 ?>
 <!DOCTYPE html>
@@ -44,15 +43,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">About Us<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="logout.php">logout<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <?php 
                 if($type=='shop'){
+                  $id=getid($user);
                   echo"<a class='nav-link' href='store.php?id=$id&type=shop'>$user</a>";
                 } 
                 else{
-                  echo"<a class='nav-link' href='profile.php?id=$id'>$user</a>";
+                  $id=getuser($user);
+                  echo"<a class='nav-link' href='cust_profile.php?id=$id[0]'>$user</a>";
                 }
               ?>
             </li>

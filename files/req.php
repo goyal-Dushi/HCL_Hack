@@ -14,7 +14,7 @@ include('connection.php');
 		 if($con->query($insert) === TRUE)  
 		 {  
              echo "<script>alert('Post added')</script>";
-             echo "<script>window.open('../store.php?id=$sid','_self')</script>";
+             echo "<script>window.open('../store.php?id=$sid&type=user','_self')</script>";
 		 }
 		 else
 		 {

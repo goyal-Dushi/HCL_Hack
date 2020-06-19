@@ -102,18 +102,58 @@ function getuser($mail){
     global $con;
     $topic="select * from user where user_email='$mail' ";
     $run= mysqli_query($con,$topic);
+    if($con->query($topic) == TRUE){
     while($row=mysqli_fetch_array($run))
     {
         $uname=$row['user_name'];
+        $umail=$row['user_email'];
         $uid=$row['user_id'];
         $uphone=$row['phone'];
         $loc=$row['location'];
     }
-    return array($uid,$uname,$uphone,$loc);
+    return array($uid,$uname,$uphone,$loc,$umail);
+}
+}
+function getuserby($id){
+    global $con;
+    $topic="select * from user where user_id='$id' ";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $uname=$row['user_name'];
+        $umail=$row['user_email'];
+        $uid=$row['user_id'];
+        $uphone=$row['phone'];
+        $password=$row['user_password'];
+        $loc=$row['location'];
+    }
+    return array($uid,$uname,$uphone,$loc,$umail,$password);
 }
 function getreq($id){
     global $con;
     $topic="select * from requirment where sid='$id' ";
+    $run= mysqli_query($con,$topic);
+    echo"click to mark done";
+    while($row=mysqli_fetch_array($run))
+    {
+        $name=$row['name'];
+        $rid=$row['rid'];
+        $content=$row['content'];
+        $uphone=$row['phone'];
+        echo"
+        <a href='files/deletereq.php?id=$rid' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
+            <div class='d-flex justify-content-between'>
+                <h5 class='mb-2'>$name</h5>
+            </div>
+            <p>$content</p>
+            <p>$uphone</p>
+            </a>
+        </a>";
+    }
+}
+function getreqby($id){
+    global $con;
+    $topic="select * from requirment where uid='$id' ";
     $run= mysqli_query($con,$topic);
     echo"click to mark done";
     while($row=mysqli_fetch_array($run))
