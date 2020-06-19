@@ -103,16 +103,16 @@ function getuser($mail){
     $topic="select * from user where user_email='$mail' ";
     $run= mysqli_query($con,$topic);
     if($con->query($topic) == TRUE){
-    while($row=mysqli_fetch_array($run))
-    {
-        $uname=$row['user_name'];
-        $umail=$row['user_email'];
-        $uid=$row['user_id'];
-        $uphone=$row['phone'];
-        $loc=$row['location'];
+        while($row=mysqli_fetch_array($run))
+        {
+            $uname=$row['user_name'];
+            $umail=$row['user_email'];
+            $uid=$row['user_id'];
+            $uphone=$row['phone'];
+            $loc=$row['location'];
+        }
+        return array($uid,$uname,$uphone,$loc,$umail);
     }
-    return array($uid,$uname,$uphone,$loc,$umail);
-}
 }
 function getuserby($id){
     global $con;

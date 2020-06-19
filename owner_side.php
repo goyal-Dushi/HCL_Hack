@@ -50,6 +50,9 @@ include('files/functions.php');
                           <a class='nav-link' href='listMarket.php?loc=$location&id=$cid&type=shop'>Visit Shops</a>
                         </li>
                         <li class='nav-item'>
+                          <a class='nav-link' href='store.php?id=$id&type=shop'>Your Shop</a>
+                        </li>
+                        <li class='nav-item'>
                             <!-- This option is only for business owner , since it will direct him to his purple page -->
                           <a class='nav-link' href='#'>My Profile</a>
                         </li>

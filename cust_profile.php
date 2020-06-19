@@ -3,6 +3,7 @@ session_start();
 include("files/connection.php");
 include("files/functions.php");
 $user=$_SESSION['umail'];
+$myid = getuser($user);
 $id=$_GET['id'];
 $details = getuserby($id);
 ?>
@@ -19,9 +20,11 @@ $details = getuserby($id);
 <body style=' background: linear-gradient(to left, #ff9933 0%, #cc99ff 100%);'>
     <div class='d-flex'>
         <div class='container text-center p-2'>
+<?php 
 
+echo"
             <nav class='navbar navbar-expand-lg fixed-top navbar-dark bg-dark'>
-                <a class='navbar-brand' href='listMarket.php'><img src="images/logo.png" alt="Logo" height='40px' width='40px' ></a>
+                <a class='navbar-brand' href='listMarket.php?loc=$details[3]&id=1&type=user'><img src='images/logo.png' height='40px' width='40px' ></a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                   <span class='navbar-toggler-icon'></span>
                 </button>
@@ -29,14 +32,15 @@ $details = getuserby($id);
                   <ul class='navbar-nav'>
                     <li class='nav-item'>
                         <!-- This option is for business owner and customer both depending upon who signed in! -->
-                      <a class='nav-link' href='./cust_profile.php'>My Profile</a>
+                      <a class='nav-link' href='./cust_profile.php?id=$myid[0]'>My Profile</a>
                     </li>
                     <li class='nav-item'>
                       <a class='nav-link' href='#'>Log Out</a>
                     </li>
                   </ul>
                 </div>
-    </nav>
+    </nav>";
+    ?>
 
             <div class='row mt-5'>
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-3'>

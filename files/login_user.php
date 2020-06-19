@@ -17,7 +17,7 @@ include('connection.php');
 		if($check_customer==0){
 
 		echo "<script>alert('Password or email is incorrect, plz try again!')</script>";
-		exit();
+		header("Location: ../index.php");
 		}
 		else {
 		$_SESSION['umail']=$c_email;

@@ -49,7 +49,7 @@
               <?php 
                 if($type=='shop'){
                   $id=getid($user);
-                  echo"<a class='nav-link' href='store.php?id=$id&type=shop'>$user</a>";
+                  echo"<a class='nav-link' href='owner_side.php?id=$id&type=shop'>$user</a>";
                 } 
                 else{
                   $id=getuser($user);
@@ -69,7 +69,7 @@
               <?php echo"<select class='form-control' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>";
               shoplocations();?>
             </div>
-              <button type="submit" name="search" class="btn btn-outline-info ml-4">Search</button>
+              <button type="submit" name="loc" class="btn btn-outline-info ml-4">Search</button>
           </form> 
         </div>
         
