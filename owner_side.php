@@ -53,11 +53,7 @@ include('files/functions.php');
                           <a class='nav-link' href='store.php?id=$id&type=shop'>Your Shop</a>
                         </li>
                         <li class='nav-item'>
-                            <!-- This option is only for business owner , since it will direct him to his purple page -->
-                          <a class='nav-link' href='#'>My Profile</a>
-                        </li>
-                        <li class='nav-item'>
-                          <a class='nav-link' href='#'>Log Out</a>
+                          <a class='nav-link' href='logout.php'>Log Out</a>
                         </li>
                       </ul>
                     </div>

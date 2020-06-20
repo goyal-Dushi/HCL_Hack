@@ -35,7 +35,7 @@ echo"
                       <a class='nav-link' href='./cust_profile.php?id=$myid[0]'>My Profile</a>
                     </li>
                     <li class='nav-item'>
-                      <a class='nav-link' href='#'>Log Out</a>
+                      <a class='nav-link' href='logout.php'>Log Out</a>
                     </li>
                   </ul>
                 </div>
@@ -89,30 +89,7 @@ echo"
                 <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
        
                     <div class='list-group'>
-                        <a href='#' class='list-group-item list-group-item-action list-group-item-warning'>
-                            <div class='d-flex w-100 justify-content-center'>
-                                <h5 class='mb-1'>Shop's Name</h5>
-                            </div>
-                            <p class='mb-1'>
-                                <ul style='text-align: justify;'>
-                                    <li>What was the order , all the user requirements.</li>
-                                    <li>Owner's shop location</li>
-                                    <li>Owner's Contact Number</li>
-                                </ul>
-                            </p>
-                        </a>
-                        <a href='#' class='list-group-item list-group-item-action list-group-item-warning mt-2'>
-                            <div class='d-flex w-100 justify-content-center'>
-                                <h5 class='mb-1'>Shop's Name</h5>
-                            </div>
-                            <p class='mb-1'>
-                                <ul style='text-align: justify;'>
-                                    <li>What was the order , all the user requirements.</li>
-                                    <li>Owner's shop location</li>
-                                    <li>Owner's Contact Number</li>
-                                </ul>
-                            </p>
-                        </a>
+                    <?php getreqby($myid[0])?>
                     </div>
                 </div>
             </div>

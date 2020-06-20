@@ -153,23 +153,29 @@ function getreq($id){
 }
 function getreqby($id){
     global $con;
-    $topic="select * from requirment where uid='$id' ";
+    $topic="select * from requirment,shop where requirment.uid='$id' and requirment.sid= shop.shop_id; ";
     $run= mysqli_query($con,$topic);
-    echo"click to mark done";
     while($row=mysqli_fetch_array($run))
     {
         $name=$row['name'];
-        $rid=$row['rid'];
+        $shop=$row['shop_name'];
+        $add=$row['shop_address'];
+        $loc=$row['shop_location'];
         $content=$row['content'];
-        $uphone=$row['phone'];
+        $oc=$row['owner_contact'];
         echo"
-        <a href='files/deletereq.php?id=$rid' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
-            <div class='d-flex justify-content-between'>
-                <h5 class='mb-2'>$name</h5>
+        <a href='#' class='list-group-item list-group-item-action list-group-item-warning'>
+            <div class='d-flex w-100 justify-content-center'>
+                <h5 class='mb-1'>$shop</h5>
             </div>
-            <p>$content</p>
-            <p>$uphone</p>
-            </a>
+            <p class='mb-1'>
+                <ul style='text-align: justify;'>
+                    <li>ordered by: $name</li>
+                    <li>$content</li>
+                    <li>$loc, $add</li>
+                    <li>$oc</li>
+                </ul>
+            </p>
         </a>";
     }
 }
