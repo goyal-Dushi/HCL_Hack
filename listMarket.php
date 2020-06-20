@@ -48,12 +48,12 @@
             <li class="nav-item">
               <?php 
                 if($type=='shop'){
-                  $id=getid($user);
-                  echo"<a class='nav-link' href='owner_side.php?id=$id&type=shop'>$user</a>";
+                  $iid=getid($user);
+                  echo"<a class='nav-link' href='owner_side.php?id=$iid&type=shop'>$user</a>";
                 } 
                 else{
-                  $id=getuser($user);
-                  echo"<a class='nav-link' href='cust_profile.php?id=$id[0]'>$user</a>";
+                  $iid=getuser($user);
+                  echo"<a class='nav-link' href='cust_profile.php?id=$iid[0]'>$user</a>";
                 }
               ?>
             </li>
@@ -66,10 +66,13 @@
         <div class="active-cyan-4 mb-4 pt-3 text-center">
           <form action="">
             <div class="form-group">
-              <?php echo"<select class='form-control' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>";
+              <?php 
+                echo"<input name='id' value='$cate' type='hidden'><input name='type' value='$type' type='hidden'>
+                  <select class='form-control' name='loc' type='text' placeholder='Enter Location' aria-label='Search'>
+                  ";
               shoplocations();?>
             </div>
-              <button type="submit" name="loc" class="btn btn-outline-info ml-4">Search</button>
+              <button type="submit" name="" class="btn btn-outline-info ml-4">Search</button>
           </form> 
         </div>
         
