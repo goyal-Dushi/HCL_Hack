@@ -133,7 +133,8 @@ function getreq($id){
     global $con;
     $topic="select * from requirment where sid='$id' ";
     $run= mysqli_query($con,$topic);
-    echo"click to mark done";
+    echo"<h5>Click to Mark Done</h5>";
+    echo"<br>";
     while($row=mysqli_fetch_array($run))
     {
         $name=$row['name'];
@@ -164,7 +165,7 @@ function getreqby($id){
         $content=$row['content'];
         $oc=$row['owner_contact'];
         echo"
-        <a href='#' class='list-group-item list-group-item-action list-group-item-warning'>
+        <a href='#' class='list-group-item list-group-item-action list-group-item-warning mt-2'>
             <div class='d-flex w-100 justify-content-center'>
                 <h5 class='mb-1'>$shop</h5>
             </div>

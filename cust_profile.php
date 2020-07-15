@@ -23,7 +23,7 @@ $details = getuserby($id);
 <?php 
 
 echo"
-            <nav class='navbar navbar-expand-lg fixed-top navbar-dark bg-dark'>
+            <nav class='navbar navbar-expand-lg fixed-top navbar-light bg-light'>
                 <a class='navbar-brand' href='listMarket.php?loc=$details[3]&id=1&type=user'><img src='images/logo.png' height='40px' width='40px' ></a>
                 <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                   <span class='navbar-toggler-icon'></span>

@@ -27,8 +27,10 @@ include("files/functions.php");
     $uname = getuser($user);}
 ?>
 <body style=<?php echo"'background:linear-gradient(to left, #$zone 0%, #ffffff 100%);'";?>>
+  
   <div class="d-flex">
     <div class="container text-center p-2">
+
 <?php
 if($type=='shop'){
 echo"
@@ -119,8 +121,8 @@ else{
                         <textarea name='requirements' class='form-control' id='cust_require' cols='30' rows='5' placeholder='Your Requirements'></textarea>
                     </div>
                     <button type='submit' name='submit' class='btn btn-outline-success btn-md'>Send</button>
-                </form>";
-                }
+                </form>"
+                ;}
                 ?>
             </div>
         </div>
@@ -131,6 +133,84 @@ else{
               </div>              
         </div>
       </div>
+
+      
+          <div class="container text-center">
+
+                  <h3 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PRODUCTS</h3>
+
+                  <div class="row pt-4">
+
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card ml-5" style="width: 150px;">
+                          <img src="images/javascript.png" class="card-img-top" alt="Product Image">
+                          <div class="card-body">
+                            <p class="card-text">
+                              <ul>
+                                <li>Name: </li>
+                                <li>Price: </li>
+                                <li>Discount: </li>
+                                <li>Quantity: </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card ml-5" style="width: 150px;">
+                          <img src="images/javascript.png" class="card-img-top" alt="Product Image">
+                          <div class="card-body">
+                            <p class="card-text">
+                              <ul>
+                                <li>Name: </li>
+                                <li>Price: </li>
+                                <li>Discount: </li>
+                                <li>Quantity: </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card ml-5" style="width: 150px;">
+                          <img src="images/javascript.png" class="card-img-top" alt="Product Image">
+                          <div class="card-body">
+                            <p class="card-text">
+                              <ul>
+                                <li>Name: </li>
+                                <li>Price: </li>
+                                <li>Discount: </li>
+                                <li>Quantity: </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card ml-5" style="width: 150px;">
+                          <img src="images/javascript.png" class="card-img-top" alt="Product Image">
+                          <div class="card-body">
+                            <p class="card-text">
+                              <ul>
+                                <li>Name: </li>
+                                <li>Price: </li>
+                                <li>Discount: </li>
+                                <li>Quantity: </li>
+                              </ul>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                  <!-- Row end -->
+                  </div>
+
+          </div>
+
+
     </div>
   </div>
 

@@ -120,6 +120,96 @@ include('files/functions.php');
                     }
                     ?>
             </div>
+
+            
+            <div class="container text-center pt-4 pb-3">
+
+                <h3 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PRODUCTS I SELL</h3>
+
+                <div class="pt-3 pb-3">
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">S No.</th>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">MRP</th>
+                                <th scope="col">Discount</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col" colspan="2">Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- Input data form the added items db -->
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Shoes</td>
+                                <td>200</td>
+                                <td>30</td>
+                                <td>8</td>
+                                <td><button type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-table="Edit Item" data-target="#ItemModal">Edit</button></td>
+                                <td><button type="submit" class="btn btn-sm btn-danger">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                    <!-- opens the popup to fill the form  -->
+                    <button type="submit" class="btn btn-md btn-dark" data-table="Add Item" data-toggle="modal" data-target="#ItemModal">+ Add Items</button>
+            
+
+                <!-- popup window -->
+                <div class="modal fade" id="ItemModal" tabindex="-1" role="dialog" aria-labelledby="ItemLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="ItemLabel">Table</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control-file" type="file" placeholder="Upload Image">
+                                    <small>It is preferred to upload an image so that your customer can see what product actually is.</small>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Name of Product" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="Price" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="Discount">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="number" placeholder="Quantity Available">
+                                </div>
+                            </form>
+                        
+                        </div>
+
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-outline-success">Submit</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    $('#ItemModal').on('show.bs.modal', function (event) {
+                        var button = $(event.relatedTarget)
+                        var tableName = button.data('table') 
+                        var modal = $(this)
+                        modal.find('.modal-title').text('Table to ' + tableName)
+                    })
+                </script>
+
+            <!-- #end item container -->
+            </div>
+
+
+            <!--#end main container  -->
         </div>
     </div>
 
