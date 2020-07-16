@@ -47,7 +47,7 @@ function shop($loc,$category,$type){
         $owner=$row['shop_email'];
         $zone=$row['zone'];
         echo"
-        <div class='col'>
+        <div class='col-lg-4 col-md-6'>
 
             ";
             if($zone == "ff0000"){
@@ -63,15 +63,15 @@ function shop($loc,$category,$type){
                     <h5 class='mb-2'>$name</h5>
                 </div>
                 <div class='row'>
-                  <div class='col-lg-9 col-md-9 col-sm-9 p-2'>
-                      <ul>
-                        <li>$loc</li>
-                        <li>Contact Number</li>
-                        <li>$owner</li>
+                  <div class='col-lg-8 col-md-8 col-sm-8'>
+                      <ul class='list-group list-group-flush'>
+                        <li class='list-group-item'>$loc</li>
+                        <li class='list-group-item'>Contact Number</li>
+                        <li class='list-group-item'>$owner</li>
                       </ul>
                   </div>
-                  <div class='col-lg-3 col-md-3 col-sm-3'>
-                    <img src='images/javascript.png' alt='Image' height='90%' width='90%' >
+                  <div class='col-lg-4 col-md-4 col-sm-4'>
+                    <img src='images/javascript.png' alt='Image' height='90%' width='100%' >
                   </div>
                 </div>
               </a>

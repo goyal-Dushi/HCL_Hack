@@ -78,7 +78,7 @@
         
         
         <div class="list-group">
-          <div class="row">
+          <div class="row row-cols-1">
             <?php shop($loc, $cate,$type);?>
           </div>
         </div>

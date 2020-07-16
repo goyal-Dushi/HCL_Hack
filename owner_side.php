@@ -128,6 +128,7 @@ include('files/functions.php');
 
                 <div class="pt-3 pb-3">
                     <table class="table table-striped table-dark">
+                    <!-- Headings of table  -->
                         <thead>
                             <tr>
                                 <th scope="col">S No.</th>
@@ -150,6 +151,7 @@ include('files/functions.php');
                                 <td><button type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-table="Edit Item" data-target="#ItemModal">Edit</button></td>
                                 <td><button type="submit" class="btn btn-sm btn-danger">Delete</button></td>
                             </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -169,20 +171,23 @@ include('files/functions.php');
 
                             <form>
                                 <div class="form-group">
-                                    <input class="form-control-file" type="file" placeholder="Upload Image">
+                                    <input class="form-control-file" name='productImage' type="file" placeholder="Upload Image">
                                     <small>It is preferred to upload an image so that your customer can see what product actually is.</small>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="text" placeholder="Name of Product" required>
+                                    <input class="form-control" type="text" name='productName' placeholder="Name of Product" required>
+                                </div>
+                                <div class='form-group'>
+                                    <textarea class='form-control' name='description' id="" cols="20" rows="3" placeholder='Describe Your Product' required></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="number" placeholder="Price" required>
+                                    <input class="form-control" name='price' type="number" placeholder="Price" required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="number" placeholder="Discount">
+                                    <input class="form-control" name='discount' type="number" placeholder="Discount">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" type="number" placeholder="Quantity Available">
+                                    <input class="form-control" name='quantity' type="number" placeholder="Quantity Available">
                                 </div>
                             </form>
                         

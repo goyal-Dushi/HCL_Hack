@@ -139,69 +139,67 @@ else{
 
                   <h3 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PRODUCTS</h3>
 
-                  <div class="row pt-4">
+                  <div class="row row-cols-2 mt-4">
 
-                      <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card ml-5" style="width: 150px;">
+                  <!-- Card1 -->
+                      <div class="col-lg-3 col-md-4 pb-2">
+                        <div class="card border-dark text-center ml-5" style="width: 80%;">
                           <img src="images/javascript.png" class="card-img-top" alt="Product Image">
                           <div class="card-body">
-                            <p class="card-text">
-                              <ul>
-                                <li>Name: </li>
-                                <li>Price: </li>
-                                <li>Discount: </li>
-                                <li>Quantity: </li>
-                              </ul>
-                            </p>
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text">Details about the Product</p>
                           </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price</li>
+                            <li class="list-group-item">Discount</li>
+                            <li class="list-group-item">Quantity</li>
+                          </ul>
                         </div>
                       </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card ml-5" style="width: 150px;">
+                  <!-- Card2 -->
+                     <div class="col-lg-3 col-md-4 pb-2">
+                        <div class="card border-dark text-center ml-5" style="width: 80%;">
                           <img src="images/javascript.png" class="card-img-top" alt="Product Image">
                           <div class="card-body">
-                            <p class="card-text">
-                              <ul>
-                                <li>Name: </li>
-                                <li>Price: </li>
-                                <li>Discount: </li>
-                                <li>Quantity: </li>
-                              </ul>
-                            </p>
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text">Details about the Product</p>
                           </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price</li>
+                            <li class="list-group-item">Discount</li>
+                            <li class="list-group-item">Quantity</li>
+                          </ul>
                         </div>
                       </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card ml-5" style="width: 150px;">
+                      <div class="col-lg-3 col-md-4 pb-2">
+                        <div class="card border-dark text-center ml-5" style="width: 80%;">
                           <img src="images/javascript.png" class="card-img-top" alt="Product Image">
                           <div class="card-body">
-                            <p class="card-text">
-                              <ul>
-                                <li>Name: </li>
-                                <li>Price: </li>
-                                <li>Discount: </li>
-                                <li>Quantity: </li>
-                              </ul>
-                            </p>
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text">Details about the Product</p>
                           </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price</li>
+                            <li class="list-group-item">Discount</li>
+                            <li class="list-group-item">Quantity</li>
+                          </ul>
                         </div>
                       </div>
                       
-                      <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card ml-5" style="width: 150px;">
+                      <div class="col-lg-3 col-md-4 pb-2">
+                        <div class="card border-dark text-center ml-5" style="width: 80%;">
                           <img src="images/javascript.png" class="card-img-top" alt="Product Image">
                           <div class="card-body">
-                            <p class="card-text">
-                              <ul>
-                                <li>Name: </li>
-                                <li>Price: </li>
-                                <li>Discount: </li>
-                                <li>Quantity: </li>
-                              </ul>
-                            </p>
+                            <h5 class="card-title">Product Name</h5>
+                            <p class="card-text">Details about the Product</p>
                           </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price</li>
+                            <li class="list-group-item">Discount</li>
+                            <li class="list-group-item">Quantity</li>
+                          </ul>
                         </div>
                       </div>
 
