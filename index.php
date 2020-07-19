@@ -8,11 +8,13 @@
     <title>Di Mart</title>
 </head>
 <body style="background: linear-gradient(to right, #3399ff -9%, #ffffff 61%);">
+
     <div class="d-flex">
         <div class="container text-center back">
+            
             <div class="row pt-4 pr-3 pl-3">
                 <div class="col-lg-6 col-md-12 col-sm-12 pb-4">
-                    <!-- <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif; letter-spacing: 5px;" class="pb-3">Welcome</h1> -->
+            
                     <img src="images/logo.png" alt="Logo" height="200px" width="200px">
                     <p style="font-size:25px;width:70%;margin-left:15%;margin-top:80px;font-family: 'Times New Roman', Times, serif;">
                     A place where you can scale up your business by building your customers online as well as get ease of access to goods and services near you.</p>

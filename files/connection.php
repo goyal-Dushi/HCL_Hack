@@ -1,4 +1,4 @@
 <?php
-$con=mysqli_connect("localhost","root","","myapp")or die('try again in some minutes, please');
+$con=mysqli_connect("localhost","root","root","myapp")or die('try again in some minutes, please');
 
 ?>

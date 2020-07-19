@@ -34,13 +34,17 @@ include('files/functions.php');
     <div class='d-flex'>
         <div class='container text-center p-4'>
 
-        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <?php 
+        
         $imgSrc = 'images/logo.png';
         $heightImage = '40px';
         $widthImage = '40px';
+        
         if($mail==$user){
-            echo"<a class='navbar-brand' href='listMarket.php?loc=$location&id=$cid&type=shop'><img src=$imgSrc height=$heightImage width=$widthImage></a>
+            
+            echo"
+            <nav class='navbar navbar-expand-lg fixed-top navbar-light bg-light'>
+            <a class='navbar-brand' href='listMarket.php?loc=$location&id=$cid&type=shop'><img src=$imgSrc height=$heightImage width=$widthImage></a>
                     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                       <span class='navbar-toggler-icon'></span>
                     </button>
@@ -61,11 +65,11 @@ include('files/functions.php');
 
 
             <div class='row mt-5'>
+                
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-2'>
+                    
                     <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
-                    
-                    
-                        
+
                     <form action='#' method='post'>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
@@ -84,6 +88,7 @@ include('files/functions.php');
                                 <label for='category'><small>Type of shop you Own</small></label>
                                 <select class='custom-select form-control-lg' name='category' id='category' required>";
                                 postcategory();
+
                                 echo"</select>
                             </div>
                         </div>
@@ -107,100 +112,113 @@ include('files/functions.php');
                         <a href='files/zone.php?zone=ff0000&id=$id'><button type='submit' class='btn btn-lg btn-danger mt-2 ml-3'>In Red Zone</button></a>
                     </div>
                 </div>
+
                 <div class='col-lg-5 col-md-6 col-sm-12 p-3 mt-2'>
                     <div class='list-group'>";
                         getreq($id);
                         echo"
                     </div>
                 </div>
-                ";
-                    }
+            </div>
+                ";}
                     else{
                         echo"User Not Found";
                     }
-                    ?>
-            </div>
+                ?>
 
             
-            <div class="container text-center pt-4 pb-3">
+            <!-- <div class='container text-center pt-4 pb-3 mr-4'> -->
 
-                <h3 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PRODUCTS I SELL</h3>
+                <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS I SELL</h3>
 
-                <div class="pt-3 pb-3">
-                    <table class="table table-striped table-dark">
+                <!-- <div class='container text-center pt-3 pb-3'> -->
+                <div class='table-responsive-sm'>
+                    <table class='table table-striped table-dark'>
                     <!-- Headings of table  -->
                         <thead>
                             <tr>
-                                <th scope="col">S No.</th>
-                                <th scope="col">Item Name</th>
-                                <th scope="col">MRP</th>
-                                <th scope="col">Discount</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col" colspan="2">Operation</th>
+                                <th scope='col'>S No.</th>
+                                <th scope='col'>Item Name</th>
+                                <th scope='col'>MRP</th>
+                                <th scope='col'>Discount</th>
+                                <th scope='col'>Quantity</th>
+                                <th scope='col' colspan='2'>Operation</th>
                             </tr>
                         </thead>
                         <tbody>
 
                         <!-- Input data form the added items db -->
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope='row'>1</th>
                                 <td>Shoes</td>
                                 <td>200</td>
                                 <td>30</td>
                                 <td>8</td>
-                                <td><button type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-table="Edit Item" data-target="#ItemModal">Edit</button></td>
-                                <td><button type="submit" class="btn btn-sm btn-danger">Delete</button></td>
+                                <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#ItemModal'>Edit</button></td>
+                                <td><button type='submit' class='btn btn-sm btn-danger'>Delete</button></td>
                             </tr>
 
                         </tbody>
                     </table>
                 </div>
+                    <!-- div for table closes  -->
+                <!-- </div> -->
 
                     <!-- opens the popup to fill the form  -->
-                    <button type="submit" class="btn btn-md btn-dark" data-table="Add Item" data-toggle="modal" data-target="#ItemModal">+ Add Items</button>
+                    <button type='submit' class='btn btn-md btn-dark' data-table='Add Item' data-toggle='modal' data-target='#ItemModal'>+ Add Items</button>
             
 
                 <!-- popup window -->
-                <div class="modal fade" id="ItemModal" tabindex="-1" role="dialog" aria-labelledby="ItemLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="ItemLabel">Table</h4>
+                <div class='modal fade' id='ItemModal' tabindex='-1' role='dialog' aria-labelledby='ItemLabel' aria-hidden='true'>
+                    <div class='modal-dialog modal-lg'>
+                        <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h4 class='modal-title' id='ItemLabel'>Table</h4>
                         </div>
-                        <div class="modal-body">
+                        <div class='modal-body'>
 
                             <form>
-                                <div class="form-group">
-                                    <input class="form-control-file" name='productImage' type="file" placeholder="Upload Image">
+                                <div class='form-group'>
+                                    <input class='form-control-file' name='productImage' type='file' placeholder='Upload Image'>
                                     <small>It is preferred to upload an image so that your customer can see what product actually is.</small>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" type="text" name='productName' placeholder="Name of Product" required>
+                                <div class='form-group'>
+                                    <input class='form-control' type='text' name='productName' placeholder='Name of Product' required>
                                 </div>
                                 <div class='form-group'>
-                                    <textarea class='form-control' name='description' id="" cols="20" rows="3" placeholder='Describe Your Product' required></textarea>
+                                    <textarea class='form-control' name='description' id='' cols='20' rows='3' placeholder='Describe Your Product' required></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" name='price' type="number" placeholder="Price" required>
+                                <div class='form-group'>
+                                    <input class='form-control' name='price' type='number' placeholder='Price' required>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" name='discount' type="number" placeholder="Discount">
+                                <div class='form-group'>
+                                    <input class='form-control' name='discount' type='number' placeholder='Discount'>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" name='quantity' type="number" placeholder="Quantity Available">
+                                <div class='form-group'>
+                                    <input class='form-control' name='quantity' type='number' placeholder='Quantity Available'>
                                 </div>
                             </form>
                         
                         </div>
 
-                        <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-outline-success">Submit</button>
+                        <div class='modal-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                <button type='submit' class='btn btn-outline-success'>Submit</button>
                         </div>
                         </div>
                     </div>
+                    <!-- div of model closes -->
                 </div>
-                
+
+            <!-- #end item container -->
+            <!-- </div> -->
+
+
+            <!--#end main container  -->
+        </div>
+    </div>
+
+                <!-- to display the heading of popup opened -->
                 <script>
                     $('#ItemModal').on('show.bs.modal', function (event) {
                         var button = $(event.relatedTarget)
@@ -209,14 +227,6 @@ include('files/functions.php');
                         modal.find('.modal-title').text('Table to ' + tableName)
                     })
                 </script>
-
-            <!-- #end item container -->
-            </div>
-
-
-            <!--#end main container  -->
-        </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -36,6 +36,7 @@ function shoplocations(){
     }
     echo"</select>";
 }
+
 function shop($loc,$category,$type){
     global $con;
     $topic="select * from shop where shop_location='$loc' and category='$category';";
@@ -148,7 +149,6 @@ function getreq($id){
             </div>
             <p>$content</p>
             <p>$uphone</p>
-            </a>
         </a>";
     }
 }
