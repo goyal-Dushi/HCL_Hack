@@ -137,10 +137,9 @@ include('files/functions.php');
                     <!-- Headings of table  -->
                         <thead>
                             <tr>
-                                <th scope='col'>S No.</th>
                                 <th scope='col'>Item Name</th>
                                 <th scope='col'>MRP</th>
-                                <th scope='col'>Discount</th>
+                                <th scope='col'>description</th>
                                 <th scope='col'>Quantity</th>
                                 <th scope='col' colspan='2'>Operation</th>
                             </tr>
@@ -148,16 +147,9 @@ include('files/functions.php');
                         <tbody>
 
                         <!-- Input data form the added items db -->
-                            <tr>
-                                <th scope='row'>1</th>
-                                <td>Shoes</td>
-                                <td>200</td>
-                                <td>30</td>
-                                <td>8</td>
-                                <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#ItemModal'>Edit</button></td>
-                                <td><button type='submit' class='btn btn-sm btn-danger'>Delete</button></td>
-                            </tr>
-
+                        <?php
+                        shop_items($id)
+?>
                         </tbody>
                     </table>
                 </div>
@@ -167,8 +159,6 @@ include('files/functions.php');
                     <!-- opens the popup to fill the form  -->
                     <button type='submit' class='btn btn-md btn-dark' data-table='Add Item' data-toggle='modal' data-target='#ItemModal'>+ Add Items</button>
             
-
-                <!-- popup window -->
                 <div class='modal fade' id='ItemModal' tabindex='-1' role='dialog' aria-labelledby='ItemLabel' aria-hidden='true'>
                     <div class='modal-dialog modal-lg'>
                         <div class='modal-content'>
@@ -177,44 +167,28 @@ include('files/functions.php');
                         </div>
                         <div class='modal-body'>
 
-                            <form>
+                            <form action='files/add_item.php?id=<?php echo"$id"; ?>' method='post'>
                                 <div class='form-group'>
-                                    <input class='form-control-file' name='productImage' type='file' placeholder='Upload Image'>
-                                    <small>It is preferred to upload an image so that your customer can see what product actually is.</small>
+                                    <input class='form-control' type='text' name='name' placeholder='Name of Product' required>
                                 </div>
                                 <div class='form-group'>
-                                    <input class='form-control' type='text' name='productName' placeholder='Name of Product' required>
-                                </div>
-                                <div class='form-group'>
-                                    <textarea class='form-control' name='description' id='' cols='20' rows='3' placeholder='Describe Your Product' required></textarea>
+                                    <textarea class='form-control' name='desc' id='' cols='20' rows='3' placeholder='Describe Your Product' required></textarea>
                                 </div>
                                 <div class='form-group'>
                                     <input class='form-control' name='price' type='number' placeholder='Price' required>
                                 </div>
-                                <div class='form-group'>
-                                    <input class='form-control' name='discount' type='number' placeholder='Discount'>
-                                </div>
-                                <div class='form-group'>
-                                    <input class='form-control' name='quantity' type='number' placeholder='Quantity Available'>
-                                </div>
+                                <div class='modal-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                <button type='submit' name='add' class='btn btn-outline-success'>Submit</button>
+                        </div>
                             </form>
                         
                         </div>
 
-                        <div class='modal-footer'>
-                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                                <button type='submit' class='btn btn-outline-success'>Submit</button>
-                        </div>
+                        
                         </div>
                     </div>
-                    <!-- div of model closes -->
                 </div>
-
-            <!-- #end item container -->
-            <!-- </div> -->
-
-
-            <!--#end main container  -->
         </div>
     </div>
 

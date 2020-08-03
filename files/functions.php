@@ -36,7 +36,6 @@ function shoplocations(){
     }
     echo"</select>";
 }
-
 function shop($loc,$category,$type){
     global $con;
     $topic="select * from shop where shop_location='$loc' and category='$category';";
@@ -178,6 +177,29 @@ function getreqby($id){
                 </ul>
             </p>
         </a>";
+    }
+}
+function shop_items($sid){
+    global $con;
+    $topic="select * from products where sid='$sid'";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $id=$row['id'];
+        $name=$row['name'];
+        $desc=$row['desc'];
+        $price=$row['price'];
+        $quantity=$row['quantity'];
+        echo"
+        <tr>
+            <td>$name</td>
+            <td>$price</td>
+            <td>$desc</td>
+            <td>$quantity</td>
+            <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#ItemModal'>Edit</button></td>
+            <td><a href='files/deletereq.php?pid=$id'><button type='submit' class='btn btn-sm btn-danger'>Delete</button></a></td>
+        </tr>
+        ";
     }
 }
 ?>
