@@ -138,82 +138,10 @@ else{
               </div>              
         </div>
       </div>
-
-      
-          <!-- <div class="container text-center"> -->
-
-                  <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
-
-                  <div class='row row-cols-2 mt-5'>
-
-                  <!-- Card1 -->
-                      <div class='col-lg-3 col-md-4 pb-2'>
-                        <div class='card border-dark text-center ml-2' style='width: 80%;'>
-                          <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
-                          <div class='card-body'>
-                            <h5 class='card-title'>Product Name</h5>
-                            <p class='card-text'>Details about the Product</p>
-                          </div>
-                          <ul class='list-group list-group-flush'>
-                            <li class='list-group-item'>Price</li>
-                            <li class='list-group-item'>Discount</li>
-                            <li class='list-group-item'>Quantity</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                  <!-- Card2 -->
-                     <div class='col-lg-3 col-md-4 pb-2'>
-                        <div class='card border-dark text-center ml-2' style='width: 80%;'>
-                          <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
-                          <div class='card-body'>
-                            <h5 class='card-title'>Product Name</h5>
-                            <p class='card-text'>Details about the Product</p>
-                          </div>
-                          <ul class='list-group list-group-flush'>
-                            <li class='list-group-item'>Price</li>
-                            <li class='list-group-item'>Discount</li>
-                            <li class='list-group-item'>Quantity</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div class='col-lg-3 col-md-4 pb-2'>
-                        <div class='card border-dark text-center ml-2' style='width: 80%;'>
-                          <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
-                          <div class='card-body'>
-                            <h5 class='card-title'>Product Name</h5>
-                            <p class='card-text'>Details about the Product</p>
-                          </div>
-                          <ul class='list-group list-group-flush'>
-                            <li class='list-group-item'>Price</li>
-                            <li class='list-group-item'>Discount</li>
-                            <li class='list-group-item'>Quantity</li>
-                          </ul>
-                        </div>
-                      </div>
-                      
-                      <div class='col-lg-3 col-md-4 pb-2'>
-                        <div class='card border-dark text-center ml-2' style='width: 80%;'>
-                          <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
-                          <div class='card-body'>
-                            <h5 class='card-title'>Product Name</h5>
-                            <p class='card-text'>Details about the Product</p>
-                          </div>
-                          <ul class='list-group list-group-flush'>
-                            <li class='list-group-item'>Price</li>
-                            <li class='list-group-item'>Discount</li>
-                            <li class='list-group-item'>Quantity</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                  <!-- Row end -->
-                  </div>
-
-          <!-- </div> -->
-
-
+        <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
+        <div class='row row-cols-2 mt-5'>
+            <?php shop_products($shopid,$id);?>
+        </div>
     </div>
   </div>
 

@@ -202,4 +202,34 @@ function shop_items($sid){
         ";
     }
 }
+
+function shop_products($sid,$uid){
+    global $con;
+    $topic="select * from products where sid='$sid'";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {
+        $id=$row['id'];
+        $name=$row['name'];
+        $desc=$row['desc'];
+        $price=$row['price'];
+        $quantity=$row['quantity'];
+        echo"
+        <div class='col-lg-3 col-md-4 pb-2'>
+            <div class='card border-dark text-center ml-2' style='width: 80%;'>
+                <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
+                <div class='card-body'>
+                <h5 class='card-title'>$name</h5>
+                <p class='card-text'>$desc</p>
+                </div>
+                <ul class='list-group list-group-flush'>
+                <li class='list-group-item'>Rs. $price</li>
+                <li class='list-group-item'>$quantity items available</li>
+                <a href='files/add_cart.php?item=$id&id=$uid' class='list-group-item'>+add to cart</a>
+                </ul>
+            </div>
+        </div>
+        ";
+    }
+}
 ?>
