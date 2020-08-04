@@ -34,6 +34,12 @@ echo"
                         <!-- This option is for business owner and customer both depending upon who signed in! -->
                       <a class='nav-link' href='./cust_profile.php?id=$myid[0]'>My Profile</a>
                     </li>
+                    <li>
+                        <a class='nav-link' href='#'>Visit Shops</a>
+                    </li>
+                    <li>
+                        <a class='nav-link' href='#'>My Cart</a>
+                    </li>
                     <li class='nav-item'>
                       <a class='nav-link' href='logout.php'>Log Out</a>
                     </li>
