@@ -138,10 +138,14 @@ else{
               </div>              
         </div>
       </div>
-        <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
+      <div class='container'>
+            
+      <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
         <div class='row row-cols-2 mt-5'>
             <?php shop_products($shopid,$id);?>
         </div>
+        
+      </div>
     </div>
   </div>
 

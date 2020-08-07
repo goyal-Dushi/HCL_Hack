@@ -215,20 +215,24 @@ function shop_products($sid,$uid){
         $price=$row['price'];
         $quantity=$row['quantity'];
         echo"
-        <div class='col-lg-3 col-md-4 pb-2'>
-            <div class='card border-dark text-center ml-2' style='width: 80%;'>
-                <img src='images/javascript.png' class='card-img-top' alt='Product Image'>
-                <div class='card-body'>
-                <h5 class='card-title'>$name</h5>
-                <p class='card-text'>$desc</p>
-                </div>
-                <ul class='list-group list-group-flush'>
-                <li class='list-group-item'>Rs. $price</li>
-                <li class='list-group-item'>$quantity items available</li>
-                <a href='files/add_cart.php?item=$id&id=$uid' class='list-group-item'>+add to cart</a>
-                </ul>
+        <div class='col-lg-3 col-md-4 mt-2'>
+        <div class='card text-white bg-dark rounded-bottom'>
+            <img src='./flask.png' class='card-img-top' alt='logo'>
+          <div class='card-body'>
+            <div class='d-flex w-100 justify-content-between'>
+              <h4 class='mb-1 card-title'>$name</h4>
+              <small style='font-size:18px;'>Rs. $price</small>
             </div>
+              <div class='card-text'>
+              $desc
+              </div>
+          </div>
+          <div class='card-footer'>
+            Quantity : $quantity
+          </div>
+          <button type='submit' class='btn btn-success'>Add</button>
         </div>
+    </div>
         ";
     }
 }
