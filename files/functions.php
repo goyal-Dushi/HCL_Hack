@@ -230,62 +230,85 @@ function shop_products($sid,$uid){
           <div class='card-footer'>
             Quantity : $quantity
           </div>
-          <button type='submit' class='btn btn-success'>Add</button>
+          <a href='files/add_cart.php?uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>
         </div>
     </div>
         ";
     }
 }
-function cart($uid){
+function cart($id){
+    global $con;
+    $topic="select DISTINCT(sid),shop_name,shop_location from cart, shop WHERE shop.shop_id=cart.sid and uid=$id";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run)){
+        $sid = $row['sid'];
+        $name=$row['shop_name'];
+        $location =$row['shop_location'];
+    echo"
+    <div class='list-group mt-5'>
+        <div href='#' class='list-group-item list-group-item-action mt-2'>
+            <h5 style='font-family:Verdana, Geneva, Tahoma, sans-serif;'>$name | $location</h5>
+           <div class='row row-cols-2 mt-3'>";
+            
+        cart_items($id,$sid);
+        echo"</div>
+    </div>";
+}}
+function cart_items($uid,$sid){
     global $con;
     $total_price = 0;
     $count=0;
-    $sid = 2;
-    $topic="select * from cart, shop, products where uid='$uid' and cart.pid=products.id and shop.shop_id=products.sid";
+    $req = '';
+    $topic="select * from cart, shop, products where uid='$uid' and cart.sid=$sid and cart.pid=products.id and shop.shop_id=products.sid";
     $run= mysqli_query($con,$topic);
     while($row=mysqli_fetch_array($run))
     {   $total = 0;
         $id=$row['id'];
         $product_id =$row['pid'];
-        $shop_name =$row['shop_name'];
-        $loc = $row['shop_location'];
+        $shop_id = $row['shop_id']; 
         $name =$row['name'];
         $price =$row['price'];
-
         $quantity =$row['quantity'];
+        $req = $name.'('.$quantity.'),'.$req;
         $total = $price*$quantity+$total;
         $count =$count+1;
         echo"
-        
-
-                            <!-- #product 1 -->
-                            <div class='col-lg-3 col-md-4 mt-'>
-                                <div class='card'>
-                                    $shop_name
-                                    <div class='card-body'>
-                                        <ul class='list-group list-group-flush'>
-                                            <li class='list-group-item'>$name</li>
-                                            <li class='list-group-item'>$quantity</li>
-                                            <li class='list-group-item'>$price</li>
-                                            <li class='list-group-item'>$loc</li>
-                                            
-                                            <li class='list-group-item'>$total</li>
-                                        </ul>
-                                    </div>
-                                    <div class='card-body'>
-                                        <button class='btn btn-danger btn-md' type='submit'>Remove</button>
-                                    </div>
-                                </div>
-                            </div>
+            <div class='col-lg-3 col-md-4 mt-'>
+                <div class='card'>
+                    <div class='card-body'>
+                        <ul class='list-group list-group-flush'>
+                            $req
+                            <li class='list-group-item'>Name: $name</li>
+                            <li class='list-group-item'>qnty: $quantity</li>
+                            <li class='list-group-item'>Rs: $price</li>
+                            <li class='list-group-item'>total: $total</li>
+                        </ul>
+                    </div>
+                    <div class='card-body'>
+                        <button class='btn btn-danger btn-md' type='submit'>Remove</button>
+                    </div>
+                </div>
+            </div>
         ";
         $total_price = $total + $total_price;
     }
+    $uname = getuserby($uid);
     echo" </div>
-    <!-- #end of products row -->
-
     <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Amount : $total_price</span>
-    <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : $count</span>
-    
+    <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : $count</span><br>
+    <form action='files/req.php' method='post'>
+        <div class='form-group'>
+            <input type='hidden' class='form-control' value='$uname[1]' name='cust_name' >
+            <input type='hidden' class='form-control' value='$id' name='shop_id' >
+            <input type='hidden' class='form-control' value='$uname[0]' name='user_id' >
+            <input type='hidden' class='form-control' value='$req rs $quantity' name='requirements' >
+        </div>
+        <div class='form-group'>
+            <input type='hidden' class='form-control' value='$uname[2]' name='cust_phone' placeholder='Contact Number' required>
+        </div>
+        <button type='submit' name='submit' class='btn btn-md btn-success mt-2'>Place Order</button>
+    </form>
     </div>";
 }
 ?>
+

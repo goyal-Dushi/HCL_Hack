@@ -42,29 +42,10 @@ include("files/functions.php");
             </nav>
         
             <div class='container'>
-
-                <div class='list-group mt-5'>
-                    
-                    <!-- SHOP 1 ITEMS -->
-                    <div href='#' class='list-group-item list-group-item-action mt-2'>
-                        
-                        <h5 style='font-family:Verdana, Geneva, Tahoma, sans-serif;'>SHOP NAME | SHOP CONTACT</h5>
-                        <a href='files/place_order.php?shop=2&user=$id'><button class='btn btn-md btn-success mt-2'>Place order</button></a>
-                        
-                        <!-- start of products row  -->
-                        <div class='row row-cols-2 mt-3'>
-                    <?php cart($id)?>
-                    </div>
-                    
+                <?php cart($id)?>
             </div>
-
-            </div>
-
         </div>
     </div>
-    
-
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
