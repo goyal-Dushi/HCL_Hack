@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart</title>
 </head>
+<?php 
+session_start();
+include("files/connection.php");
+include("files/functions.php");
+    $id=$_GET['id'];
+?>
 <body>
 
     <div class="d-flex">
@@ -40,112 +46,14 @@
                 <div class='list-group mt-5'>
                     
                     <!-- SHOP 1 ITEMS -->
-                    <a href='#' class='list-group-item list-group-item-action mt-2'>
+                    <div href='#' class='list-group-item list-group-item-action mt-2'>
                         
-                        <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif;">SHOP NAME | SHOP CONTACT</h5>
-                        <button class='btn btn-md btn-success mt-2'>Proceed to Pay</button>
+                        <h5 style='font-family:Verdana, Geneva, Tahoma, sans-serif;'>SHOP NAME | SHOP CONTACT</h5>
+                        <a href='files/place_order.php?shop=2&user=$id'><button class='btn btn-md btn-success mt-2'>Place order</button></a>
                         
                         <!-- start of products row  -->
                         <div class='row row-cols-2 mt-3'>
-
-                            <!-- #product 1 -->
-                            <div class='col-lg-3 col-md-4 mt-'>
-                                <div class='card'>
-                                    <img src='images/logo.png' alt='product image' class='card-img-top'>
-                                    <div class='card-body'>
-                                        <ul class='list-group list-group-flush'>
-                                            <li class='list-group-item'>Product name</li>
-                                            <li class='list-group-item'>Quantity</li>
-                                            <li class='list-group-item'>Price</li>
-                                        </ul>
-                                    </div>
-                                    <div class='card-body'>
-                                        <button class='btn btn-danger btn-md' type="submit">Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- #end of product 1 -->
-
-                            <!-- #product 2 -->
-                            <div class='col-lg-3 col-md-4'>
-                                <div class='card'>
-                                    <img src='images/logo.png' alt='product image' class='card-img-top'>
-                                    <div class='card-body'>
-                                        <ul class='list-group list-group-flush'>
-                                            <li class='list-group-item'>Product name</li>
-                                            <li class='list-group-item'>Quantity</li>
-                                            <li class='list-group-item'>Price</li>
-                                        </ul>
-                                    </div>
-                                    <div class='card-body'>
-                                        <button class='btn btn-danger btn-md' type='submit'>Remove</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end of product 2 -->
-        
-                        </div>
-                        <!-- #end of products row -->
-
-                        <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Amount : </span>
-                        <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : </span>
-                        
-                        </a>
-                        <!-- #End of SHOP 1 ITEMS -->
-
-                        <!-- SHOP 2 ITEMS -->
-                        <a href='#' class='list-group-item list-group-item-action mt-2'>
-                        
-                            <h5 style='font-family:Verdana, Geneva, Tahoma, sans-serif;'>SHOP NAME | SHOP CONTACT</h5>
-                            <button class='btn btn-md btn-success mt-2'>Proceed to Pay</button>
-                            
-                            <!-- start of products row  -->
-                            <div class='row row-cols-2 mt-3'>
-    
-                                <!-- #product 1 -->
-                                <div class='col-lg-3 col-md-4 mt-'>
-                                    <div class='card'>
-                                        <img src='images/logo.png' alt='product image' class='card-img-top'>
-                                        <div class='card-body'>
-                                            <ul class='list-group list-group-flush'>
-                                                <li class='list-group-item'>Product name</li>
-                                                <li class='list-group-item'>Quantity</li>
-                                                <li class='list-group-item'>Price</li>
-                                            </ul>
-                                        </div>
-                                        <div class='card-body'>
-                                            <button class='btn btn-danger btn-md' type='submit'>Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- #end of product 1 -->
-    
-                                <!-- #product 2 -->
-                                <div class='col-lg-3 col-md-4'>
-                                    <div class='card'>
-                                        <img src='images/logo.png' alt='product image' class='card-img-top'>
-                                        <div class='card-body'>
-                                            <ul class='list-group list-group-flush'>
-                                                <li class='list-group-item'>Product name</li>
-                                                <li class='list-group-item'>Quantity</li>
-                                                <li class='list-group-item'>Price</li>
-                                            </ul>
-                                        </div>
-                                        <div class='card-body'>
-                                            <button class='btn btn-danger btn-md' type='submit'>Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end of product 2 -->    
-    
-                            </div>
-                            <!-- #end of products row -->
-    
-                            <span class='badge badge-pill badge-info p-3 mt-3"' style='font-size: 13px;'>Total Amount : </span>
-                            <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : </span>
-    
-                            </a>
-                            <!-- #END OF SHOP 2 ITEMS -->
+                    <?php cart($id)?>
                     </div>
                     
             </div>

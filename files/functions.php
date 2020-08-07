@@ -232,4 +232,56 @@ function shop_products($sid,$uid){
         ";
     }
 }
+function cart($uid){
+    global $con;
+    $total_price = 0;
+    $count=0;
+    $sid = 2;
+    $topic="select * from cart, shop, products where uid='$uid' and cart.pid=products.id and shop.shop_id=products.sid";
+    $run= mysqli_query($con,$topic);
+    while($row=mysqli_fetch_array($run))
+    {   $total = 0;
+        $id=$row['id'];
+        $product_id =$row['pid'];
+        $shop_name =$row['shop_name'];
+        $loc = $row['shop_location'];
+        $name =$row['name'];
+        $price =$row['price'];
+
+        $quantity =$row['quantity'];
+        $total = $price*$quantity+$total;
+        $count =$count+1;
+        echo"
+        
+
+                            <!-- #product 1 -->
+                            <div class='col-lg-3 col-md-4 mt-'>
+                                <div class='card'>
+                                    $shop_name
+                                    <div class='card-body'>
+                                        <ul class='list-group list-group-flush'>
+                                            <li class='list-group-item'>$name</li>
+                                            <li class='list-group-item'>$quantity</li>
+                                            <li class='list-group-item'>$price</li>
+                                            <li class='list-group-item'>$loc</li>
+                                            
+                                            <li class='list-group-item'>$total</li>
+                                        </ul>
+                                    </div>
+                                    <div class='card-body'>
+                                        <button class='btn btn-danger btn-md' type='submit'>Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+        ";
+        $total_price = $total + $total_price;
+    }
+    echo" </div>
+    <!-- #end of products row -->
+
+    <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Amount : $total_price</span>
+    <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : $count</span>
+    
+    </div>";
+}
 ?>
