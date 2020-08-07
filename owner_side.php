@@ -172,7 +172,7 @@ include('files/functions.php');
                                     <input class='form-control' type='text' name='name' placeholder='Name of Product' required>
                                 </div>
                                 <div class='form-group'>
-                                    <textarea class='form-control' name='desc' id='' cols='20' rows='3' placeholder='Describe Your Product' required></textarea>
+                                    <textarea class='form-control' name='desc' id='' cols='20' rows='3' placeholder='Describe Your Product'></textarea>
                                 </div>
                                 <div class='form-group'>
                                     <input class='form-control' name='price' type='number' placeholder='Price' required>
