@@ -43,6 +43,21 @@ include("files/functions.php");
         
             <div class='container'>
                 <?php cart($id)?>
+                <?php if(isset($_POST['save'])){
+                  $cid=mysqli_real_escape_string($con,$_POST['cart_id']);
+                  $quan=mysqli_real_escape_string($con,$_POST['q']);
+                  echo"$cid, $quan";
+                  $insert="update `cart` set `quantity`='$quan' where cid=$cid";
+                  if($con->query($insert) === TRUE)
+                  {
+                      echo "<script>alert('saved!')</script>";
+                      header("user_cart.php?id=$id");
+                  }
+                  else
+                  {
+                      echo "Error: " . $insert . "<br>" . $con->error;
+                  }
+                }?>
             </div>
         </div>
     </div>

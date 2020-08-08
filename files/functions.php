@@ -270,7 +270,7 @@ function cart_items($uid,$sid){
     $run= mysqli_query($con,$topic);
     while($row=mysqli_fetch_array($run))
     {   $total = 0;
-        $id=$row['id'];
+        $id=$row['cid'];
         $product_id =$row['pid'];
         $shop_id = $row['shop_id']; 
         $name =$row['name'];
@@ -286,13 +286,15 @@ function cart_items($uid,$sid){
                     <div class='card-body'>
                         <ul class='list-group list-group-flush'>
                             <li class='list-group-item'>Name: $name</li>
-                            <li class='list-group-item'>Qnty: 
-                            <form action='' method='post'>
-                            <input type='number' name='cart_id' value='$id'>
-                            <input type='number' name='q' value='$quantity' min='1' max='$available'>
-                            <button name='save'>Save</button></form></li>
+                            
                             <li class='list-group-item'>Rs: $price</li>
                             <li class='list-group-item'>total: $total</li>
+
+                            <li class='list-group-item'>Qnty: 
+                            <form action='' method='post'>
+                            <input type='hidden' name='cart_id' value='$id'>
+                            <input type='number' name='q' value='$quantity' min='1' max='$available'>
+                            <button name='save'>Save</button></form></li>
                         </ul>
                     </div>
                     <div class='card-body'>
@@ -302,19 +304,6 @@ function cart_items($uid,$sid){
             </div>
         ";
         $total_price = $total + $total_price;
-    }
-    if(isset($_POST['save'])){
-        $cid=mysqli_real_escape_string($con,$_POST['cart_id']);
-        $quan=mysqli_real_escape_string($con,$_POST['q']);
-        $insert="update `cart` set `quantity`='$quan' where id=$cid";
-        if($con->query($insert) === TRUE)
-        {
-            echo "<script>alert('saved!')</script>";
-        }
-        else
-        {
-            echo "Error: " . $insert . "<br>" . $con->error;
-        }
     }
     $uname = getuserby($uid);
     echo" </div>
