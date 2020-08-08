@@ -19,9 +19,11 @@ include("files/functions.php");
     $shopid=$row['shop_id'];
     $name=$row['shop_name'];
     $location=$row['shop_location'];
-    $user=$row['shop_email'];
+    $shop_email=$row['shop_email'];
     $cid=$row['category'];
     $zone=$row['zone'];
+    $address=$row['shop_address'];
+    $contact=$row['owner_contact'];
     $user=$_SESSION['umail'];
     if($type=='user'){
     $uname = getuser($user);}
@@ -86,13 +88,13 @@ else{
           
             <div class="row pt-3">
               <div class="col-lg-8 text-center">
-                <h3><?php echo"$name | "; getcategory($cid);?></h3>
+                <h3><?php echo"$name | "; getcategory($cid);echo"</h3>
                 <br>
                 <ul>
-                  <li><?php echo"$location"; ?></li>
-                  <li>Contact details</li>
-                  <li>Address</li>
-                </ul>
+                  <li>$location</li>
+                  <li>$shop_email, $contact</li>
+                  <li>$address</li>
+                </ul>";?>
               </div>
               
               <div class="col-lg-4 p-2">
@@ -139,10 +141,8 @@ else{
         </div>
       </div>
       <div class='container'>
-            
-      <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
-        <div class='row row-cols-2 mt-5'>
-            <?php shop_products($shopid,$id);?>
+            <?php 
+            if($type=='user'){shop_products($shopid,$id);}?>
         </div>
         
       </div>

@@ -70,7 +70,7 @@ include('files/functions.php');
                     
                     <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
 
-                    <form action='#' method='post'>
+                    <form action='files/update_shop.php' method='post'>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
                                 <input type='text' value='$oname' class='form-control form-control-lg' name='owner_name' id='owner_name' placeholder='Your Name' required>
@@ -88,12 +88,12 @@ include('files/functions.php');
                                 <label for='category'><small>Type of shop you Own</small></label>
                                 <select class='custom-select form-control-lg' name='category' id='category' required>";
                                 postcategory();
-
                                 echo"</select>
                             </div>
                         </div>
                         <div class='form-row pt-2'>
                             <div class='form-group col'>
+                                <input type='hidden' name='id' value='$id'>
                                 <input type='text' value='$name' name='shop_name' id='shop_name' placeholder='Your Shop's Name' class='form-control form-control-lg'>
                             </div>
                         </div>
@@ -105,7 +105,7 @@ include('files/functions.php');
                                 <input type='text' value='$location' name='city' id='city' placeholder='City' class='form-control form-control-lg' required>
                             </div>
                         </div>
-                        <button type='submit' class='btn btn-lg btn-outline-dark'>Submit</button>
+                        <button type='submit' name='submit' class='btn btn-lg btn-outline-dark'>Submit</button>
                     </form>
                     <div class='text-center pt-3' style='margin-top: 45px;'>
                         <a href='files/zone.php?zone=66ff66&id=$id'><button type='submit' class='btn btn-lg btn-success mt-2'>In Green Zone</button></a>
@@ -153,10 +153,7 @@ include('files/functions.php');
                         </tbody>
                     </table>
                 </div>
-                    <!-- div for table closes  -->
-                <!-- </div> -->
 
-                    <!-- opens the popup to fill the form  -->
                     <button type='submit' class='btn btn-md btn-dark' data-table='Add Item' data-toggle='modal' data-target='#ItemModal'>+ Add Items</button>
             
                 <div class='modal fade' id='ItemModal' tabindex='-1' role='dialog' aria-labelledby='ItemLabel' aria-hidden='true'>

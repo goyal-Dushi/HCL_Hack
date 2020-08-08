@@ -22,7 +22,7 @@ function postcategory(){
         $id=$row['id'];
         $title=$row['name'];
         
-        echo" <option value='$title'>$title</option>";
+        echo" <option value='$id'>$title</option>";
     }
 }
 function shoplocations(){
@@ -45,6 +45,7 @@ function shop($loc,$category,$type){
         $id=$row['shop_id'];
         $name=$row['shop_name'];
         $owner=$row['shop_email'];
+        $contact=$row['owner_contact'];
         $zone=$row['zone'];
         echo"
         <div class='col-lg-4 col-md-6'>
@@ -66,7 +67,7 @@ function shop($loc,$category,$type){
                   <div class='col-lg-8 col-md-8 col-sm-8'>
                       <ul class='list-group list-group-flush'>
                         <li class='list-group-item'>$loc</li>
-                        <li class='list-group-item'>Contact Number</li>
+                        <li class='list-group-item'>$contact</li>
                         <li class='list-group-item'>$owner</li>
                       </ul>
                   </div>
@@ -141,12 +142,17 @@ function getreq($id){
         $rid=$row['rid'];
         $content=$row['content'];
         $uphone=$row['phone'];
+        $string = "123,46,78,000"; 
+        $content_array = explode (",", $content);
         echo"
         <a href='files/deletereq.php?id=$rid' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
             <div class='d-flex justify-content-between'>
                 <h5 class='mb-2'>$name</h5>
-            </div>
-            <p>$content</p>
+            </div><ul>";
+            foreach($content_array as $item){
+                echo"<li>$item</li>";
+            }
+            echo"</ul>
             <p>$uphone</p>
         </a>";
     }
@@ -189,22 +195,23 @@ function shop_items($sid){
         $name=$row['name'];
         $desc=$row['desc'];
         $price=$row['price'];
-        $quantity=$row['quantity'];
+        $available=$row['available'];
         echo"
         <tr>
             <td>$name</td>
             <td>$price</td>
             <td>$desc</td>
-            <td>$quantity</td>
+            <td>$available</td>
             <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#ItemModal'>Edit</button></td>
             <td><a href='files/deletereq.php?pid=$id'><button type='submit' class='btn btn-sm btn-danger'>Delete</button></a></td>
         </tr>
         ";
     }
 }
-
 function shop_products($sid,$uid){
     global $con;
+    echo"<h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
+    <div class='row row-cols-2 mt-5'>";
     $topic="select * from products where sid='$sid'";
     $run= mysqli_query($con,$topic);
     while($row=mysqli_fetch_array($run))
@@ -213,7 +220,7 @@ function shop_products($sid,$uid){
         $name=$row['name'];
         $desc=$row['desc'];
         $price=$row['price'];
-        $quantity=$row['quantity'];
+        $available=$row['available'];
         echo"
         <div class='col-lg-3 col-md-4 mt-2'>
         <div class='card text-white bg-dark rounded-bottom'>
@@ -228,7 +235,7 @@ function shop_products($sid,$uid){
               </div>
           </div>
           <div class='card-footer'>
-            Quantity : $quantity
+            available : $available
           </div>
           <a href='files/add_cart.php?uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>
         </div>
@@ -268,18 +275,22 @@ function cart_items($uid,$sid){
         $shop_id = $row['shop_id']; 
         $name =$row['name'];
         $price =$row['price'];
-        $quantity =$row['quantity'];
-        $req = $name.'('.$quantity.'),'.$req;
+        $quantity=$row['quantity'];
+        $available =$row['available'];
         $total = $price*$quantity+$total;
         $count =$count+1;
+        $req = $name.'('.$quantity.'),'.$req;
         echo"
             <div class='col-lg-3 col-md-4 mt-'>
                 <div class='card'>
                     <div class='card-body'>
                         <ul class='list-group list-group-flush'>
-                            $req
                             <li class='list-group-item'>Name: $name</li>
-                            <li class='list-group-item'>qnty: $quantity</li>
+                            <li class='list-group-item'>Qnty: 
+                            <form action='' method='post'>
+                            <input type='number' name='cart_id' value='$id'>
+                            <input type='number' name='q' value='$quantity' min='1' max='$available'>
+                            <button name='save'>Save</button></form></li>
                             <li class='list-group-item'>Rs: $price</li>
                             <li class='list-group-item'>total: $total</li>
                         </ul>
@@ -291,6 +302,19 @@ function cart_items($uid,$sid){
             </div>
         ";
         $total_price = $total + $total_price;
+    }
+    if(isset($_POST['save'])){
+        $cid=mysqli_real_escape_string($con,$_POST['cart_id']);
+        $quan=mysqli_real_escape_string($con,$_POST['q']);
+        $insert="update `cart` set `quantity`='$quan' where id=$cid";
+        if($con->query($insert) === TRUE)
+        {
+            echo "<script>alert('saved!')</script>";
+        }
+        else
+        {
+            echo "Error: " . $insert . "<br>" . $con->error;
+        }
     }
     $uname = getuserby($uid);
     echo" </div>
