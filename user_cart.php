@@ -11,36 +11,41 @@ session_start();
 include("files/connection.php");
 include("files/functions.php");
     $id=$_GET['id'];
+    $user=$_SESSION['umail'];
+    $myid = getuser($user);
+    $details = getuserby($id);
 ?>
 <body>
 
     <div class="d-flex">
         <div class="container text-center p-3">
+        <?php 
 
-
+echo"
             <nav class='navbar navbar-expand-lg fixed-top navbar-light bg-light'>
-                <a class='navbar-brand' href='./listMarket.php'><img src='images/logo.png' alt='Logo' height='40px' width='40px' ></a>
-                    <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
-                        <span class='navbar-toggler-icon'></span>
-                    </button>
+                <a class='navbar-brand' href='listMarket.php?loc=$details[3]&id=1&type=user'><img src='images/logo.png' height='40px' width='40px' ></a>
+                <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                  <span class='navbar-toggler-icon'></span>
+                </button>
                 <div class='collapse navbar-collapse' id='navbarNav'>
                   <ul class='navbar-nav'>
                     <li class='nav-item'>
-                      <a class='nav-link' href='#'>My Profile<span class='sr-only'>(current)</span></a>
-                    </li>
-                    <li class='nav-item'>
-                      <a class='nav-link' href='#'>Visit Shops</a>
+                        <!-- This option is for business owner and customer both depending upon who signed in! -->
+                      <a class='nav-link' href='./cust_profile.php?id=$myid[0]'>My Profile</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="#">My Cart</a>
+                        <a class='nav-link' href='listMarket.php?loc=$details[3]&id=1&type=user'>Visit Shops</a>
+                    </li>
+                    <li>
+                        <a class='nav-link' href='user_cart.php?id=$myid[0]'>My Cart</a>
                     </li>
                     <li class='nav-item'>
-                      <a class='nav-link' href='#'>Log Out</a>
+                      <a class='nav-link' href='logout.php'>Log Out</a>
                     </li>
                   </ul>
                 </div>
-            </nav>
-        
+    </nav>";
+    ?>
             <div class='container'>
                 <?php cart($id)?>
                 <?php if(isset($_POST['save'])){

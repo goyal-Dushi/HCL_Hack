@@ -35,10 +35,10 @@ echo"
                       <a class='nav-link' href='./cust_profile.php?id=$myid[0]'>My Profile</a>
                     </li>
                     <li>
-                        <a class='nav-link' href='#'>Visit Shops</a>
+                        <a class='nav-link' href='listMarket.php?loc=$details[3]&id=1&type=user'>Visit Shops</a>
                     </li>
                     <li>
-                        <a class='nav-link' href='#'>My Cart</a>
+                        <a class='nav-link' href='user_cart.php?id=$myid[0]'>My Cart</a>
                     </li>
                     <li class='nav-item'>
                       <a class='nav-link' href='logout.php'>Log Out</a>

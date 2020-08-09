@@ -72,7 +72,7 @@ function shop($loc,$category,$type){
                       </ul>
                   </div>
                   <div class='col-lg-4 col-md-4 col-sm-4'>
-                    <img src='images/javascript.png' alt='Image' height='90%' width='100%' >
+                    <img src='images/user/store.png' alt='Image' width='100%'>
                   </div>
                 </div>
               </a>
@@ -224,7 +224,7 @@ function shop_products($sid,$uid){
         echo"
         <div class='col-lg-3 col-md-4 mt-2'>
         <div class='card text-white bg-dark rounded-bottom'>
-            <img src='./flask.png' class='card-img-top' alt='logo'>
+            <img src='images/user/product.png' class='card-img-top products' alt='logo'>
           <div class='card-body'>
             <div class='d-flex w-100 justify-content-between'>
               <h4 class='mb-1 card-title'>$name</h4>
@@ -309,7 +309,7 @@ function cart_items($uid,$sid){
     echo" </div>
     <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Amount : $total_price</span>
     <span class='badge badge-pill badge-info p-3 mt-3' style='font-size: 13px;'>Total Items : $count</span><br>
-    <form action='files/req.php' method='post'>
+    <form action='files/place_order.php' method='post'>
         <div class='form-group'>
             <input type='hidden' class='form-control' value='$uname[1]' name='cust_name' >
             <input type='hidden' class='form-control' value='$id' name='shop_id' >

@@ -45,18 +45,22 @@
             <li class="nav-item active">
               <a class="nav-link" href="logout.php">Log Out<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">My Cart<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
               <?php 
                 if($type=='shop'){
                   $iid=getid($user);
-                  echo"<a class='nav-link' href='owner_side.php?id=$iid&type=shop'>$user</a>";
+                  echo"
+                  <li class='nav-item'>
+                  <a class='nav-link' href='owner_side.php?id=$iid&type=shop'>$user</a>";
                 } 
                 else{
                   $iid=getuser($user);
-                  echo"<a class='nav-link' href='cust_profile.php?id=$iid[0]'>$user</a>";
+                  
+                  echo"
+                  <li class='nav-item active'>
+                    <a class='nav-link' href='user_cart.php?id=$iid[0]'>My Cart<span class='sr-only'>(current)</span></a>
+                  </li>
+                  <li class='nav-item'>
+                  <a class='nav-link' href='cust_profile.php?id=$iid[0]'>$user</a>";
                 }
               ?>
             </li>

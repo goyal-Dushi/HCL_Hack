@@ -99,7 +99,7 @@ else{
               
               <div class="col-lg-4 p-2">
                 <!-- image of shop to be displayed here !!!  -->
-                  <img src="" alt="Shop Image" height="70%" width="70%">
+                  <img src="images/user/store.png" alt="Shop Image" height="70%" width="70%">
               </div>
             </div>
             
