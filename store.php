@@ -13,6 +13,7 @@ include("files/connection.php");
 include("files/functions.php");
     $id=$_GET['id'];
     $type=$_GET['type'];
+
     $getuser="select * from shop where shop_id='$id';";
     $runuser= mysqli_query($con,$getuser);
     $row=mysqli_fetch_array($runuser);
@@ -24,9 +25,15 @@ include("files/functions.php");
     $zone=$row['zone'];
     $address=$row['shop_address'];
     $contact=$row['owner_contact'];
+
     $user=$_SESSION['umail'];
+
     if($type=='user'){
-    $uname = getuser($user);}
+      $uname = getuser($user);
+    }
+    else {
+      $myid = getid($user);
+    }
 ?>
 <body style=<?php echo"'background:linear-gradient(to left, #$zone 0%, #ffffff 100%);'";?>>
   
@@ -48,7 +55,7 @@ echo"
             </li>
             <li class='nav-item'>
                 <!-- This option is only for business owner , since it will direct him to his purple page -->
-              <a class='nav-link' href='./owner_side.php?id=$shopid[0]&type=shop'>My Profile</a>
+              <a class='nav-link' href='./owner_side.php?id=$myid&type=shop'>My Profile</a>
             </li>
             <li class='nav-item'>
               <a class='nav-link' href='logout.php'>Log Out</a>
@@ -107,7 +114,7 @@ else{
                 <?php
                 if($type=='shop'){
                   
-                  echo"<a href='owner_side.php?id=$id&type=shop'>Check orders</a>";
+                  echo"<a href='owner_side.php?id=$myid&type=shop'>Check orders</a>";
 
                 }
                 else{
