@@ -147,13 +147,13 @@ function getreq($id){
         echo"
         <a href='files/deletereq.php?id=$rid' class='list-group-item list-group-item-action list-group-item-primary mb-2'>
             <div class='d-flex justify-content-between'>
-                <h5 class='mb-2'>$name</h5>
+                <h5 class='mb-2' style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>$name</h5>
+                <small style='font-size:15px;'>$uphone</small>
             </div><ul>";
             foreach($content_array as $item){
-                echo"<li>$item</li>";
+                echo"<li style='font-family: Lucida Console, Courier, monospace;'>$item</li>";
             }
             echo"</ul>
-            <p>$uphone</p>
         </a>";
     }
 }
