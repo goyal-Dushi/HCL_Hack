@@ -291,8 +291,9 @@ function cart_items($uid,$sid){
                             <li class='list-group-item'>total: $total</li>
 
                             <li class='list-group-item'>Qnty: 
-                            <form action='' method='post'>
+                            <form action='files/req.php' method='post'>
                             <input type='hidden' name='cart_id' value='$id'>
+                            <input type='hidden' name='user_id' value='$uid'>
                             <input type='number' name='q' value='$quantity' min='1' max='$available'>
                             <button name='save'>Save</button></form></li>
                         </ul>

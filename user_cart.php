@@ -55,7 +55,6 @@ echo"
                   $insert="update `cart` set `quantity`='$quan' where cid=$cid";
                   if($con->query($insert) === TRUE)
                   {
-                      echo "<script>alert('saved!')</script>";
                       header("user_cart.php?id=$id");
                   }
                   else

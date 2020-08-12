@@ -31,8 +31,11 @@ include("files/functions.php");
     if($type=='user'){
       $uname = getuser($user);
     }
-    else {
+    elseif($type=='shop'){
       $myid = getid($user);
+    }
+    else{
+      $uname=[1,2,3];
     }
 ?>
 <body style=<?php echo"'background:linear-gradient(to left, #$zone 0%, #ffffff 100%);'";?>>

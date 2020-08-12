@@ -13,5 +13,4 @@ else
 {
     echo "Error: " . $insert . "<br>" . $con->error;
 }
-
 ?>

@@ -21,5 +21,19 @@ include('connection.php');
 			 echo "Error: " . $insert . "<br>" . $con->error;
 		 }
 	 }
+	 if(isset($_POST['save'])){
+		$cid=mysqli_real_escape_string($con,$_POST['cart_id']);
+		$quan=mysqli_real_escape_string($con,$_POST['q']);
+		$id=mysqli_real_escape_string($con,$_POST['user_id']);
+		$insert="update `cart` set `quantity`='$quan' where cid=$cid";
+		if($con->query($insert) === TRUE)
+		{
+			echo "<script>window.open('../user_cart.php?id=$id','_self')</script>";
+		}
+		else
+		{
+			echo "Error: " . $insert . "<br>" . $con->error;
+		}
+	  }
 
 ?>
