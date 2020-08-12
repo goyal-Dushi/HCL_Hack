@@ -174,6 +174,9 @@ include('files/functions.php');
                                 <div class='form-group'>
                                     <input class='form-control' name='price' type='number' placeholder='Price' required>
                                 </div>
+                                <div class='form-group'>
+                                    <input class='form-control' name='quantity' type='number' min='1' placeholder='Quantity' required>
+                                </div>
                                 <div class='modal-footer'>
                                 <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
                                 <button type='submit' name='add' class='btn btn-outline-success'>Submit</button>

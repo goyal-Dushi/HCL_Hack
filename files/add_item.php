@@ -6,8 +6,9 @@ include("connection.php");
 		$name=mysqli_real_escape_string($con,$_POST['name']);
 		$desc=mysqli_real_escape_string($con,$_POST['desc']);
 		$price=mysqli_real_escape_string($con,$_POST['price']);
+		$quantity=mysqli_real_escape_string($con,$_POST['quantity']);
 
-		$insert="INSERT INTO `products`(`sid`,`name`, `desc`,`price`) VALUES($id,'$name','$desc', '$price')";
+		$insert="INSERT INTO `products`(`sid`,`name`, `desc`,`price`,`available`) VALUES($id,'$name','$desc', '$price','$quantity')";
 		if($con->query($insert) === TRUE)
 		{
 		echo "<script>alert('product added')</script>";

@@ -32,10 +32,10 @@ include("files/functions.php");
       $uname = getuser($user);
     }
     elseif($type=='shop'){
-      $myid = getid($user);
+      $uname = getid($user);
     }
     else{
-      $uname=[1,2,3];
+      $uname=[0,'',''];
     }
 ?>
 <body style=<?php echo"'background:linear-gradient(to left, #$zone 0%, #ffffff 100%);'";?>>
@@ -58,7 +58,7 @@ echo"
             </li>
             <li class='nav-item'>
                 <!-- This option is only for business owner , since it will direct him to his purple page -->
-              <a class='nav-link' href='./owner_side.php?id=$myid&type=shop'>My Profile</a>
+              <a class='nav-link' href='./owner_side.php?id=$uname[0]&type=shop'>My Profile</a>
             </li>
             <li class='nav-item'>
               <a class='nav-link' href='logout.php'>Log Out</a>
@@ -117,7 +117,7 @@ else{
                 <?php
                 if($type=='shop'){
                   
-                  echo"<a href='owner_side.php?id=$myid&type=shop'>Check orders</a>";
+                  echo"<a href='owner_side.php?id=$uname[0]&type=shop'>Check orders</a>";
 
                 }
                 else{
@@ -152,7 +152,9 @@ else{
       </div>
       <div class='container'>
             <?php 
-            if($type=='user'){shop_products($shopid,$id);}?>
+            {shop_products($shopid,$uname[0],$type);}
+            ?>
+
         </div>
         
       </div>

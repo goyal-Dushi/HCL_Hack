@@ -208,7 +208,7 @@ function shop_items($sid){
         ";
     }
 }
-function shop_products($sid,$uid){
+function shop_products($sid,$uid,$type){
     global $con;
     echo"<h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
     <div class='row row-cols-2 mt-5'>";
@@ -236,8 +236,12 @@ function shop_products($sid,$uid){
           </div>
           <div class='card-footer'>
             available : $available
-          </div>
-          <a href='files/add_cart.php?uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>
+          </div>";
+          if($type=='user'){
+              echo"
+          <a href='files/add_cart.php?uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>";
+          }
+          echo"
         </div>
     </div>
         ";
@@ -313,7 +317,7 @@ function cart_items($uid,$sid){
     <form action='files/place_order.php' method='post'>
         <div class='form-group'>
             <input type='hidden' class='form-control' value='$uname[1]' name='cust_name' >
-            <input type='hidden' class='form-control' value='$id' name='shop_id' >
+            <input type='hidden' class='form-control' value='$shop_id' name='shop_id' >
             <input type='hidden' class='form-control' value='$uname[0]' name='user_id' >
             <input type='hidden' class='form-control' value='$req rs $quantity' name='requirements' >
         </div>
