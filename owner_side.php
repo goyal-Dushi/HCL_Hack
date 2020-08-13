@@ -129,10 +129,10 @@ include('files/functions.php');
             
             <!-- <div class='container text-center pt-4 pb-3 mr-4'> -->
 
-                <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS I SELL</h3>
+                <h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif; margin-top:15px;'>PRODUCTS I SELL</h3>
 
                 <!-- <div class='container text-center pt-3 pb-3'> -->
-                <div class='table-responsive-sm'>
+                <div class='table-responsive-sm mt-3'>
                     <table class='table table-striped table-dark'>
                     <!-- Headings of table  -->
                         <thead>

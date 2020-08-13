@@ -175,11 +175,12 @@ function getreqby($id){
                 <h5 class='mb-1'>$shop</h5>
             </div>
             <p class='mb-1'>
+                <h6>Owner Details</h6>
                 <ul style='text-align: justify;'>
-                    <li>ordered by: $name</li>
-                    <li>$content</li>
-                    <li>$loc, $add</li>
-                    <li>$oc</li>
+                    <li>Ordered By : $name</li>
+                    <li>Items : $content</li>
+                    <li>Address : $loc $add</li>
+                    <li>Contact : $oc</li>
                 </ul>
             </p>
         </a>";
@@ -211,7 +212,7 @@ function shop_items($sid){
 function shop_products($sid,$uid,$type){
     global $con;
     echo"<h3 style='font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;'>PRODUCTS</h3>
-    <div class='row row-cols-2 mt-5'>";
+    <div class='row row-cols-2 mt-3'>";
     $topic="select * from products where sid='$sid'";
     $run= mysqli_query($con,$topic);
     while($row=mysqli_fetch_array($run))
@@ -325,8 +326,7 @@ function cart_items($uid,$sid){
             <input type='hidden' class='form-control' value='$uname[2]' name='cust_phone' placeholder='Contact Number' required>
         </div>
         <button type='submit' name='submit' class='btn btn-md btn-success mt-2'>Place Order</button>
-    </form>
-    </div>";
+    </form>";
 }
 ?>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Name</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="styles.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
 </head>
 <?php 
 session_start();
@@ -97,13 +97,13 @@ else{
         <div class="col-lg-7">
           
             <div class="row pt-3">
-              <div class="col-lg-8 text-center">
+              <div class="col-lg-8 mt-2">
                 <h3><?php echo"$name | "; getcategory($cid);echo"</h3>
                 <br>
-                <ul>
-                  <li>$location</li>
-                  <li>$shop_email, $contact</li>
-                  <li>$address</li>
+                <ul class='list-group list-group-flush'>
+                  <li class='list-group-item'>Address : $location , $address</li>
+                  <li class='list-group-item'>Email : $shop_email</li>
+                  <li class='list-group-item'>Mobile : $contact</li>
                 </ul>";?>
               </div>
               
@@ -117,7 +117,7 @@ else{
                 <?php
                 if($type=='shop'){
                   
-                  echo"<a href='owner_side.php?id=$uname[0]&type=shop'>Check orders</a>";
+                  echo"<a href='owner_side.php?id=$uname[0]&type=shop' style='font-size:23px;text-decoration:none;font-family:Helvatica;'><b>Check orders</b></a>";
 
                 }
                 else{

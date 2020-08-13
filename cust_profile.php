@@ -58,10 +58,10 @@ echo"
                     <hr style='border-width: 2px;border-style:solid;'>
                     <p style='margin-top: 30px;'>
                         <ul style='text-align: justify;'>
-                            <li>Customer Name: $details[1]</li>
-                            <li>Customer email: $details[4]</li>
-                            <li>Customer phone: $details[2]</li>
-                            <li>Customer Location: $details[3] </li>
+                            <li>Name :  $details[1]</li>
+                            <li>Email :  $details[4]</li>
+                            <li>Contact Number :  $details[2]</li>
+                            <li>Address : $details[3] </li>
                         </ul>
                     </p>";
                     if($user==$details[4]){
