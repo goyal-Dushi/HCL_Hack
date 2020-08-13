@@ -203,7 +203,7 @@ function shop_items($sid){
             <td>$price</td>
             <td>$desc</td>
             <td>$available</td>
-            <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#ItemModal'>Edit</button></td>
+            <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#edit'>Edit</button></td>
             <td><a href='files/deletereq.php?pid=$id'><button type='submit' class='btn btn-sm btn-danger'>Delete</button></a></td>
         </tr>
         ";
@@ -240,7 +240,7 @@ function shop_products($sid,$uid,$type){
           </div>";
           if($type=='user'){
               echo"
-          <a href='files/add_cart.php?uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>";
+          <a href='files/add_cart.php?method=add&uid=$uid&sid=$sid&pid=$id' class='btn btn-success'>Add</a>";
           }
           echo"
         </div>
@@ -279,6 +279,7 @@ function cart_items($uid,$sid){
         $product_id =$row['pid'];
         $shop_id = $row['shop_id']; 
         $name =$row['name'];
+        $zone =$row['zone'];
         $price =$row['price'];
         $quantity=$row['quantity'];
         $available =$row['available'];
@@ -300,11 +301,11 @@ function cart_items($uid,$sid){
                             <input type='hidden' name='cart_id' value='$id'>
                             <input type='hidden' name='user_id' value='$uid'>
                             <input type='number' name='q' value='$quantity' min='1' max='$available'>
-                            <button name='save'>Save</button></form></li>
+                            <button name='save' style='background:#$zone'>Save</button></form></li>
                         </ul>
                     </div>
                     <div class='card-body'>
-                        <button class='btn btn-danger btn-md' type='submit'>Remove</button>
+                        <a href='files/add_cart.php?method=del&id=$id&uid=$uid' class='btn btn-danger btn-md' type='submit'>Remove</a>
                     </div>
                 </div>
             </div>

@@ -189,6 +189,39 @@ include('files/functions.php');
                         </div>
                     </div>
                 </div>
+                <div class='modal fade' id='edit' tabindex='-1' role='dialog' aria-labelledby='ItemLabel' aria-hidden='true'>
+                    <div class='modal-dialog modal-lg'>
+                        <div class='modal-content'>
+                        <div class='modal-header'>
+                            <h4 class='modal-title' id='ItemLabel'>EDIT</h4>
+                        </div>
+                        <div class='modal-body'>
+
+                            <form action='files/add_item.php?id=<?php echo"$id"; ?>' method='post'>
+                                <div class='form-group'>
+                                    <input class='form-control' type='text' name='name' placeholder='Name of Product' required>
+                                </div>
+                                <div class='form-group'>
+                                    <textarea class='form-control' name='desc' id='' cols='20' rows='3' placeholder='Describe Your Product'></textarea>
+                                </div>
+                                <div class='form-group'>
+                                    <input class='form-control' name='price' type='number' placeholder='Price' required>
+                                </div>
+                                <div class='form-group'>
+                                    <input class='form-control' name='quantity' type='number' min='1' placeholder='Quantity' required>
+                                </div>
+                                <div class='modal-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                <button type='submit' name='add' class='btn btn-outline-success'>Submit</button>
+                        </div>
+                            </form>
+                        
+                        </div>
+
+                        
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
