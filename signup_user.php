@@ -24,7 +24,7 @@
                             <input class="form-control form-control-md input" type="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-control-md input" type="tel" name='user_contact' placeholder="Your Contact no." required>
+                            <input class="form-control form-control-md input" type="number" name='user_contact' placeholder="Your Contact no." required>
                         </div>
                         <div class="form-group">
                             <input class="form-control form-control-md input" type="text" name="user_loc" placeholder="Your City" required>

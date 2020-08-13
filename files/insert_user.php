@@ -14,7 +14,7 @@ include("connection.php");
 		if($con->query($insert) === TRUE)
 		{	
 			echo "<script>alert('Welcome $name!')</script>";
-			header("Location: index.html");
+			header("Location: ../index.php");
 		}
 		else
 		{

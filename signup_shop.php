@@ -20,7 +20,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 pt-4 pb-2 pr-3" style="text-align: center;">
                     <form class="form pb-3" action="files/insert_shop.php" method="post">
                         <div class="form-group">
-                            <input class="form-control form-control-md input" type="text" name="name" placeholder="Shopname" required>
+                            <input class="form-control form-control-md input" type="text" name="shopname" placeholder="Shopname" required>
                         </div>
                         <div class="form-group">
                             <input class="form-control form-control-md input" type="text" name="location" placeholder="location" required>
@@ -29,7 +29,7 @@
                             <input class="form-control form-control-md input" type="email" name="email" placeholder="email" required>
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-control-md input" type="email" name="ownernaem  " placeholder="email" required>
+                            <input class="form-control form-control-md input" type="text" name="name" placeholder="your name" required>
                         </div>
                         <div class="form-group">
                             <select class="form-control form-control-md input mb-3" name='category' required>
