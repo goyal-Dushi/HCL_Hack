@@ -1,8 +1,7 @@
 
 <?php
 include('connection.php');
-	if(isset($_POST['submit']))
-	{
+	if(isset($_POST['submit'])){
         $owner=mysqli_real_escape_string($con,$_POST['owner_name']);
         $id=mysqli_real_escape_string($con,$_POST['id']);
         $contact=mysqli_real_escape_string($con,$_POST['contact']);
@@ -14,14 +13,30 @@ include('connection.php');
 		if($con->query($insert) === TRUE)
 		{
 		echo "<script>alert('profile updated!')</script>";
-		// header("Location: index.html");
+		header("Location: ../owner_side.php?id=$id&type=shop");
+		}
+		else{
+			echo "Error: " . $insert . "<br>" . $con->error;
+		}
 	}
+	elseif(isset($_POST['save']))
+	{	
+		$id=mysqli_real_escape_string($con,$_POST['id']);
+        $name=mysqli_real_escape_string($con,$_POST['name']);
+        $desc=mysqli_real_escape_string($con,$_POST['desc']);
+        $price=mysqli_real_escape_string($con,$_POST['price']);
+		$quantity=mysqli_real_escape_string($con,$_POST['quantity']);
+        $insert="update `products` set `name`='$name',`price` = '$price', `desc` = '$desc',`available` = '$quantity' where id=$id";
+		if($con->query($insert) === TRUE)
+		{
+		echo "<script>alert('product updated!')</script>";
+		}
 		else
 		{
 			echo "Error: " . $insert . "<br>" . $con->error;
 		}
 	}
-    else{
-        echo"what you doin?";
-    }
+	else{
+		echo"Shut up";
+	}
 ?>

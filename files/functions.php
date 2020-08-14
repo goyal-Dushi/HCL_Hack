@@ -203,7 +203,7 @@ function shop_items($sid){
             <td>$price</td>
             <td>$desc</td>
             <td>$available</td>
-            <td><button type='submit' class='btn btn-sm btn-warning' data-toggle='modal' data-table='Edit Item' data-target='#edit'>Edit</button></td>
+            <td><a href='files/edit_product.php?id=$id'>Edit</a></td>
             <td><a href='files/deletereq.php?pid=$id'><button type='submit' class='btn btn-sm btn-danger'>Delete</button></a></td>
         </tr>
         ";
