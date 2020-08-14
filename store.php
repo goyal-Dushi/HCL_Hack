@@ -77,11 +77,15 @@ else{
         <div class='collapse navbar-collapse' id='navbarNav'>
           <ul class='navbar-nav'>
             <li class='nav-item'>
+                <!-- This option is only for business owner , since it will direct him to his purple page -->
+              <a class='nav-link' href='./cust_profile.php?id=$uname[0]'>My Profile</a>
+            </li>
+            <li class='nav-item'>
               <a class='nav-link' href='./listMarket.php?loc=$location&id=$cid&type=$type'>Visit Shops <span class='sr-only'>(current)</span></a>
             </li>
             <li class='nav-item'>
                 <!-- This option is only for business owner , since it will direct him to his purple page -->
-              <a class='nav-link' href='./cust_profile.php?id=$uname[0]'>My Profile</a>
+              <a class='nav-link' href='./user_cart.php?id=$uname[0]'>My Cart</a>
             </li>
             <li class='nav-item'>
               <a class='nav-link' href='logout.php'>Log Out</a>
