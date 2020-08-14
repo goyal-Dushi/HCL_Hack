@@ -5,6 +5,7 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>My Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>
 </head>
 
@@ -68,7 +69,7 @@ include('files/functions.php');
                 
                 <div class='col-lg-7 col-md-6 col-sm-12 p-3 mt-2'>
                     
-                    <h4 style='font-family:Verdana, Geneva, Tahoma, sans-serif;font-weight: 500;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;'>Provide Info Of Shop You Own</h4>
+                    <h2 style='font-family: Neucha, cursive;font-weight: 400;border-bottom-style:solid;border-bottom-width: 1px;padding-bottom: 10px;letter-spacing:4px;'>Provide Info Of Your Shop</h2>
 
                     <form action='files/update_shop.php' method='post'>
                         <div class='form-row pt-2'>

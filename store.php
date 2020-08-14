@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store Name</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="./styles.css" rel="stylesheet">
-</head>
 <?php 
 session_start();
 include("files/connection.php");
@@ -38,6 +31,15 @@ include("files/functions.php");
       $uname=[0,'',''];
     }
 ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo"$name" ?></title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
 <body style=<?php echo"'background:linear-gradient(to left, #$zone 0%, #ffffff 100%);'";?>>
   
   <div class="d-flex">
@@ -102,7 +104,7 @@ else{
           
             <div class="row pt-3">
               <div class="col-lg-8 mt-2">
-                <h3><?php echo"$name | "; getcategory($cid);echo"</h3>
+                <h3 style="font-family: 'IBM Plex Serif', serif;"><?php echo"$name | "; getcategory($cid);echo"</h3>
                 <br>
                 <ul class='list-group list-group-flush'>
                   <li class='list-group-item'>Address : $location , $address</li>

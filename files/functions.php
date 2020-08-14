@@ -1,3 +1,7 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+
 <?php
 include("connection.php");
 
@@ -52,11 +56,11 @@ function shop($loc,$category,$type){
 
             ";
             if($zone == "ff0000"){
-                echo"<a href='store.php?id=$id&type=$type' class='list-group-item list-group-item-action list-group-item-danger mb-2'>
+                echo"<a href='store.php?id=$id&type=$type' class='shadow list-group-item list-group-item-action list-group-item-danger mb-2'>
               ";
             }
             else{
-                echo"<a href='store.php?id=$id&type=$type' class='list-group-item list-group-item-action list-group-item-success mb-2'>
+                echo"<a href='store.php?id=$id&type=$type' class='shadow list-group-item list-group-item-action list-group-item-success mb-2'>
               ";
             }
             echo"
@@ -134,7 +138,7 @@ function getreq($id){
     global $con;
     $topic="select * from requirment where sid='$id' ";
     $run= mysqli_query($con,$topic);
-    echo"<h5>Click to Mark Done</h5>";
+    echo"<h4 style='font-family: Caveat, cursive;letter-spacing:3px;'>Click to Mark Done</h4>";
     echo"<br>";
     while($row=mysqli_fetch_array($run))
     {
@@ -203,7 +207,7 @@ function shop_items($sid){
             <td>$price</td>
             <td>$desc</td>
             <td>$available</td>
-            <td><a href='files/edit_product.php?id=$id'>Edit</a></td>
+            <td><a href='files/edit_product.php?id=$id'><button type='submit' class='btn btn-sm btn-warning'>Edit</button></a></td>
             <td><a href='files/deletereq.php?pid=$id'><button type='submit' class='btn btn-sm btn-danger'>Delete</button></a></td>
         </tr>
         ";
@@ -224,7 +228,7 @@ function shop_products($sid,$uid,$type){
         $available=$row['available'];
         echo"
         <div class='col-lg-3 col-md-4 mt-2'>
-        <div class='card text-white bg-dark rounded-bottom'>
+        <div class='shadow-lg card text-white bg-dark rounded-bottom'>
             <img src='images/user/product.png' class='card-img-top products' alt='logo'>
           <div class='card-body'>
             <div class='d-flex w-100 justify-content-between'>

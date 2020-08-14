@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Trirong:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>Di Mart</title>
 </head>
@@ -16,7 +17,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 pb-4">
             
                     <img src="images/logo.png" alt="Logo" height="200px" width="200px">
-                    <p style="font-size:25px;width:70%;margin-left:15%;margin-top:80px;font-family: 'Times New Roman', Times, serif;">
+                    <p style="font-size:25px;width:70%;margin-left:15%;margin-top:80px;font-family: 'Trirong', serif;">
                     A place where you can scale up your business by building your customers online as well as get ease of access to goods and services near you.</p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 text-center pb-4">

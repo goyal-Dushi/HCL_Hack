@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'medical'),
-(2, 'hardware');
+(1, 'Medical'),
+(2, 'Hardware');
 
 -- --------------------------------------------------------
 
