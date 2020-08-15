@@ -1,5 +1,6 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <?php
@@ -262,8 +263,8 @@ function cart($id){
         $location =$row['shop_location'];
     echo"
     <div class='list-group mt-5'>
-        <div href='#' class='list-group-item list-group-item-action mt-2'>
-            <h5 style='font-family:Verdana, Geneva, Tahoma, sans-serif;'>$name | $location</h5>
+        <div href='#' class='shadow list-group-item list-group-item-action mt-2' style='background:#$zone;'>
+            <h4 style='font-family: IBM Plex Serif, serif;'>$name | $location</h4>
            <div class='row row-cols-2 mt-3'>";
             
         cart_items($id,$sid);
@@ -292,7 +293,7 @@ function cart_items($uid,$sid){
         $req = $name.'('.$quantity.'),'.$req;
         echo"
             <div class='col-lg-3 col-md-4 mt-'>
-                <div class='card'>
+                <div class='shadow card'>
                     <div class='card-body'>
                         <ul class='list-group list-group-flush'>
                             <li class='list-group-item'>Name: $name</li>
@@ -305,7 +306,7 @@ function cart_items($uid,$sid){
                             <input type='hidden' name='cart_id' value='$id'>
                             <input type='hidden' name='user_id' value='$uid'>
                             <input type='number' name='q' value='$quantity' min='1' max='$available'>
-                            <button name='save' style='background:#$zone'>Save</button></form></li>
+                            <button name='save' class='btn btn-sm btn-info'>Save</button></form></li>
                         </ul>
                     </div>
                     <div class='card-body'>

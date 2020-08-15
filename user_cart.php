@@ -15,7 +15,7 @@ include("files/functions.php");
     $myid = getuser($user);
     $details = getuserby($id);
 ?>
-<body>
+<body style="background: linear-gradient(to left, #99ccff 0%, #ffffff 100%);">
 
     <div class="d-flex">
       <div class="container text-center p-3">

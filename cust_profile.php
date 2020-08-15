@@ -13,6 +13,7 @@ $details = getuserby($id);
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <title>Hello <?php $details[1]?></title>
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossorigin='anonymous'>
 </head>
@@ -53,7 +54,7 @@ echo"
                     
                 <?php 
                     
-                        echo"<h2>About $details[1]</h2>
+                        echo"<h2 style='font-family: Courgette, cursive;'>About $details[1]</h2>
                     
                     <hr style='border-width: 2px;border-style:solid;'>
                     <p style='margin-top: 30px;'>
@@ -67,7 +68,7 @@ echo"
                     if($user==$details[4]){
                         echo"
                     <div class='mt-2 p-4'>
-                        <h3 class='mb-2'>Edit Your Details</h3>
+                        <h3 class='mb-2' style='font-family: Courgette, cursive;'>Edit Your Details</h3>
                         <hr style='border-width: 2px;border-style:solid;'>
                         <form action='files/update_buyer_profile.php?id=$details[0]' method='post'>
                             <div class='form-group'>
